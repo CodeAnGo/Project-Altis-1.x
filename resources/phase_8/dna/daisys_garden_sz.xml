@@ -4,39 +4,40 @@
 		<visgroup zone="5000:safe_zone" vis="5000:safe_zone">
 			<group name="props">
 				<prop name="daisys_garden_DNARoot" code="daisys_garden">
-					<pos x="-0.16" y="0.130005" z="0" />
+					<pos x="-0.16" y="0.130001" z="0" />
 					<nhpr h="0" p="0" r="0" />
+					<scale x="1.4" y="1.4" z="1.4" />
 				</prop>
 				<prop name="prop_daisy_park_table_DNARoot" code="prop_daisy_park_table">
-					<pos x="19.57" y="14.03" z="0" />
+					<pos x="19.57" y="24.03" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_large_ur_DNARoot" code="prop_tree_large_ur">
-					<pos x="26.67" y="40.1" z="0.06" />
+					<pos x="26.67" y="15.1" z="0.06" />
 					<nhpr h="165" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_small_ur_DNARoot" code="prop_tree_small_ur">
-					<pos x="80" y="80" z="0" />
+					<pos x="105" y="0" z="0" />
 					<nhpr h="165" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_large_ur_DNARoot" code="prop_tree_large_ur">
-					<pos x="-61.9" y="66.92" z="0" />
+					<pos x="-66.9" y="11.92" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_small_ur_DNARoot" code="prop_tree_small_ur">
-					<pos x="-16.6" y="32.51" z="0" />
+					<pos x="83.4" y="-7.49" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_large_ul_DNARoot" code="prop_tree_large_ul">
-					<pos x="-82.5" y="126.82" z="0" />
+					<pos x="-46.5" y="121.82" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_tree_large_ur_DNARoot" code="prop_tree_large_ur">
-					<pos x="85.04" y="123.19" z="0" />
+					<pos x="140.04" y="93.19" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisy_park_table_DNARoot" code="prop_daisy_park_table">
-					<pos x="-19.68" y="181.64" z="0" />
+					<pos x="45.42" y="337.13" z="14" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisy_park_table_DNARoot" code="prop_daisy_park_table">
