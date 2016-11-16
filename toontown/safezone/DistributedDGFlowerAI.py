@@ -3,14 +3,14 @@ from direct.distributed.DistributedObjectAI import DistributedObjectAI
 
 class DistributedDGFlowerAI(DistributedObjectAI):
     notify = DirectNotifyGlobal.directNotify.newCategory("DistributedDGFlowerAI")
-    BASE_HEIGHT = 2.0
-    MAX_HEIGHT = 10.0
-    HEIGHT_PER_AV = 0.5
+    BASE_HEIGHT = 4.0
+    MAX_HEIGHT = 20.0
+    HEIGHT_PER_AV = 2
 
     def __init__(self, air):
         DistributedObjectAI.__init__(self, air)
         self.avatars = set()
-        self.height = 2.0
+        self.height = 4.0
 
     def avatarEnter(self):
         avId = self.air.getAvatarIdFromSender()
