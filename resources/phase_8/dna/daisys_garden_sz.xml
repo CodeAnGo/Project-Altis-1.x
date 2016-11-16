@@ -122,20 +122,20 @@
 					<scale x="1.5" y="1.5" z="1.5" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="55.1738" y="12.9627" z="0" />
+					<pos x="85.2738" y="12.9627" z="0" />
 					<nhpr h="-167" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="75.19" y="23.04" z="0" />
-					<nhpr h="45" p="0" r="0" />
+					<pos x="56.39" y="7.23999" z="0" />
+					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="51.34" y="11.94" z="0" />
+					<pos x="81.44" y="11.94" z="0" />
 					<nhpr h="16" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="72.51" y="20.35" z="0" />
-					<nhpr h="45" p="0" r="0" />
+					<pos x="52.51" y="7.34999" z="0" />
+					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
 					<pos x="-31.37" y="9.33" z="0" />
@@ -154,59 +154,59 @@
 					<nhpr h="-30" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-65.64" y="20.37" z="0" />
-					<nhpr h="-45" p="0" r="0" />
+					<pos x="-81.64" y="34.27" z="0" />
+					<nhpr h="-30" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-68.3" y="23.05" z="0" />
-					<nhpr h="-45" p="0" r="0" />
+					<pos x="-84.9" y="36.15" z="0" />
+					<nhpr h="-30" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="-94.01" y="87.1" z="0" />
-					<nhpr h="-60" p="0" r="0" />
+					<pos x="95.99" y="304.3" z="14" />
+					<nhpr h="-60" p="0" r="-0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="-95.91" y="90.39" z="0" />
+					<pos x="94.09" y="307.59" z="14" />
 					<nhpr h="-60" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-101.45" y="105.97" z="0" />
+					<pos x="-136.45" y="120.97" z="0" />
 					<nhpr h="-90" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-101.52" y="109.71" z="0" />
+					<pos x="-136.52" y="124.71" z="0" />
 					<nhpr h="-90" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="-97.16" y="127.36" z="0" />
+					<pos x="-142.16" y="182.36" z="0" />
 					<nhpr h="60" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="-99.06" y="124.13" z="0" />
+					<pos x="-144.06" y="179.13" z="0" />
 					<nhpr h="60" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="95.01" y="87.68" z="0" />
+					<pos x="117.11" y="38.08" z="0" />
 					<nhpr h="60" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="96.93" y="90.96" z="0" />
+					<pos x="119.03" y="41.36" z="0" />
 					<nhpr h="60" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="99.94" y="103.97" z="0" />
+					<pos x="124.94" y="68.97" z="0" />
 					<nhpr h="90" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="99.92" y="107.67" z="0" />
+					<pos x="124.92" y="72.67" z="0" />
 					<nhpr h="90" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="98.89" y="119.93" z="0" />
+					<pos x="148.49" y="164.13" z="0" />
 					<nhpr h="105" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="97.89" y="123.55" z="0" />
+					<pos x="147.49" y="167.75" z="0" />
 					<nhpr h="105" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_yellow_DNARoot" code="prop_daisys_flowerbox_yellow">
@@ -218,24 +218,24 @@
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="15.2" y="193.53" z="-0.01" />
+					<pos x="-14.8" y="108.43" z="-0.00999999" />
 					<nhpr h="-25" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="18.66" y="191.93" z="-0.02" />
+					<pos x="-11.34" y="106.83" z="-0.02" />
 					<nhpr h="-24" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-22.53" y="191.78" z="0.01" />
-					<nhpr h="22" p="0" r="0" />
+					<pos x="27.37" y="274.28" z="0.00999999" />
+					<nhpr h="-30" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_pink">
-					<pos x="-19.01" y="193.22" z="0.01" />
-					<nhpr h="21" p="0" r="0" />
+					<pos x="-9.01" y="277.92" z="0.01" />
+					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<flat_building id="tb0:random_DNARoot" width="10">
-					<pos x="86.93" y="168.59" z="9.95" />
-					<nhpr h="-9" p="0" r="0" />
+					<pos x="-100.57" y="276.09" z="12.95" />
+					<nhpr h="45" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.57" g="1" b="0.65" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -250,8 +250,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="10">
-					<pos x="94.71" y="174.42" z="10.54" />
-					<nhpr h="-143" p="0" r="0" />
+					<pos x="116.21" y="246.42" z="13.54" />
+					<nhpr h="-45" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.57" g="1" b="0.65" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -272,7 +272,7 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="10">
-					<pos x="-99.77" y="170.93" z="10" />
+					<pos x="-133.87" y="237.63" z="14" />
 					<nhpr h="-18" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.57" g="1" b="0.65" a="1" />
@@ -288,7 +288,7 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="10">
-					<pos x="-90.34" y="167.85" z="10" />
+					<pos x="-124.44" y="234.55" z="14" />
 					<nhpr h="60" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.57" g="1" b="0.65" a="1" />
@@ -304,22 +304,22 @@
 					</wall>
 				</flat_building>
 				<prop name="prop_daisy_park_table_DNARoot" code="prop_daisy_park_table">
-					<pos x="-81" y="78" z="0" />
+					<pos x="-101" y="38" z="0" />
 					<nhpr h="0" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_yellow">
-					<pos x="34.4" y="9.41" z="0" />
-					<nhpr h="0" p="0" r="0" />
+					<pos x="34.1" y="8.41" z="0" />
+					<nhpr h="-15" p="0" r="0" />
 				</prop>
 				<prop name="prop_daisys_flowerbox_pink_DNARoot" code="prop_daisys_flowerbox_yellow">
 					<pos x="30.44" y="9.42" z="0" />
-					<nhpr h="-175" p="0" r="0" />
+					<nhpr h="165" p="0" r="0" />
 				</prop>
 			</group>
 			<node name="buildings">
 				<prop name="prop_trolley_station_DNARoot" code="prop_trolley_station">
-					<pos x="8.37" y="222.32" z="10" />
-					<nhpr h="0" p="0" r="0" />
+					<pos x="-93.4301" y="283.12" z="14" />
+					<nhpr h="34" p="0" r="0" />
 					<sign>
 						<color r="0.18" g="0.78" b="0.69" a="1" />
 						<baseline code="mickey" kern="-0.09" width="11.1111" height="11.1111">
@@ -337,8 +337,8 @@
 					</sign>
 				</prop>
 				<flat_building id="sz0:random_DNARoot" width="15">
-					<pos x="53.79" y="212.04" z="10" />
-					<nhpr h="-42" p="0" r="0" />
+					<pos x="-68.61" y="299.94" z="13" />
+					<nhpr h="30" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.22" g="0.74" b="0.62" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -356,8 +356,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="15">
-					<pos x="64.94" y="202.01" z="10" />
-					<nhpr h="37" p="0" r="0" />
+					<pos x="-55.66" y="307.41" z="13" />
+					<nhpr h="45" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.22" g="0.74" b="0.62" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -369,8 +369,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="15">
-					<pos x="-66.556" y="204.778" z="10" />
-					<nhpr h="138.814" p="0" r="0" />
+					<pos x="-20.056" y="-4.722" z="0" />
+					<nhpr h="-166" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.8" g="0.54" b="0.61" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -385,8 +385,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="sz0:random_DNARoot" width="15">
-					<pos x="-75.6786" y="212.057" z="10" />
-					<nhpr h="60" p="0" r="0" />
+					<pos x="33.4214" y="-7.34299" z="0" />
+					<nhpr h="174" p="0" r="0" />
 					<wall height="3" code="wall_basement_rock_ur">
 						<color r="0.8" g="0.54" b="0.61" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -410,8 +410,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="5">
-					<pos x="8.37" y="222.32" z="10" />
-					<nhpr h="120" p="0" r="0" />
+					<pos x="76.2058" y="326.666" z="14" />
+					<nhpr h="-30" p="0" r="0" />
 					<wall height="4" code="wall_basement_brick_ur">
 						<color r="0.68" g="0.85" b="0.45" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -429,8 +429,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="tb0:random_DNARoot" width="5">
-					<pos x="39.66" y="227.09" z="10" />
-					<nhpr h="-105" p="0" r="0" />
+					<pos x="80.3431" y="324.223" z="13" />
+					<nhpr h="-45" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.63" g="0.39" b="0.71" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -445,8 +445,8 @@
 					</wall>
 				</flat_building>
 				<prop name="linktunnel_dg_5201_DNARoot" code="prop_safe_zone_tunnel">
-					<pos x="-109.48" y="292.95" z="3.36" />
-					<nhpr h="-130" p="0" r="0" />
+					<pos x="32.92" y="452.25" z="7.36" />
+					<nhpr h="-165" p="0" r="0" />
 					<sign code="tunnel_sign_green">
 						<pos x="0" y="0" z="-0.18" />
 						<scale x="1.5" y="1" z="1.5" />
@@ -470,8 +470,8 @@
 					</sign>
 				</prop>
 				<prop name="linktunnel_dg_5102_DNARoot" code="prop_safe_zone_tunnel">
-					<pos x="187.08" y="191.78" z="3.3" />
-					<nhpr h="126" p="0" r="0" />
+					<pos x="-161.7" y="359.4" z="37.35" />
+					<nhpr h="-120" p="0" r="0" />
 					<sign code="tunnel_sign_green">
 						<scale x="1.5" y="1" z="1.5" />
 						<baseline code="mickey" width="35.8744" height="35.8744">
@@ -480,6 +480,31 @@
 							<nhpr h="0" p="0" r="2" />
 							<scale x="1.5" y="1" z="1.5" />
 							<text>ELM STREET</text>
+						</baseline>
+						<baseline code="mickey" width="52.5099" height="52.5099">
+							<color r="1" g="1" b="0" a="1" />
+							<pos x="0" y="0" z="-2.02" />
+							<scale x="0.8" y="1" z="0.8" />
+							<text>DAISY GARDENS</text>
+						</baseline>
+						<baseline>
+							<pos x="0" y="0" z="1.73" />
+							<scale x="2.5" y="1" z="2.5" />
+							<graphic code="daisySZ" />
+						</baseline>
+					</sign>
+				</prop>
+				<prop name="linktunnel_dg_5402_DNARoot" code="prop_safe_zone_tunnel">
+					<pos x="219.08" y="243.08" z="7.3" />
+					<nhpr h="111" p="0" r="0" />
+					<sign code="tunnel_sign_green">
+						<scale x="1.5" y="1" z="1.5" />
+						<baseline code="mickey" width="35.8744" height="35.8744">
+							<color r="1" g="1" b="0" a="1" />
+							<pos x="0" y="0" z="-1.01" />
+							<nhpr h="0" p="0" r="2" />
+							<scale x="1.5" y="1" z="1.5" />
+							<text>ROSE VALLEY</text>
 						</baseline>
 						<baseline code="mickey" width="52.5099" height="52.5099">
 							<color r="1" g="1" b="0" a="1" />
