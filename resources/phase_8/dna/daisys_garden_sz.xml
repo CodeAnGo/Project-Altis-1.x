@@ -470,7 +470,7 @@
 					</sign>
 				</prop>
 				<prop name="linktunnel_dg_5102_DNARoot" code="prop_safe_zone_tunnel">
-					<pos x="-161.7" y="359.4" z="37.35" />
+					<pos x="-161.7" y="359.4" z="7.35" />
 					<nhpr h="-120" p="0" r="0" />
 					<sign code="tunnel_sign_green">
 						<scale x="1.5" y="1" z="1.5" />
@@ -520,8 +520,8 @@
 					</sign>
 				</prop>
 				<flat_building id="sz0:random_DNARoot" width="5">
-					<pos x="38.37" y="222.32" z="10" />
-					<nhpr h="0" p="0" r="0" />
+					<pos x="83.8618" y="320.727" z="13" />
+					<nhpr h="-30" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.63" g="0.39" b="0.71" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -539,8 +539,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="sz0:random_DNARoot" width="15">
-					<pos x="42.64" y="222.08" z="10" />
-					<nhpr h="-42" p="0" r="0" />
+					<pos x="-112.36" y="307.08" z="9" />
+					<nhpr h="76" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.63" g="0.39" b="0.71" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -564,8 +564,8 @@
 					</wall>
 				</flat_building>
 				<flat_building id="sz0:random_DNARoot" width="20">
-					<pos x="-11.63" y="222.32" z="10" />
-					<nhpr h="0" p="0" r="0" />
+					<pos x="-31.73" y="327.82" z="12" />
+					<nhpr h="45" p="0" r="0" />
 					<wall height="4" code="wall_basement_brick_ur">
 						<color r="0.68" g="0.85" b="0.45" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -590,8 +590,8 @@
 				</flat_building>
 				<landmark_building id="tb3:toon_landmark_DG_clothes_shop_DNARoot" code="toon_landmark_DG_clothes_shop" type="clotheshop">
 					<title>Clothing Shop</title>
-					<pos x="85" y="40" z="0" />
-					<nhpr h="-105" p="0" r="0" />
+					<pos x="-140" y="145" z="0" />
+					<nhpr h="105" p="0" r="0" />
 					<door code="door_double_clothesshop_ur">
 						<color r="1" g="0.55" b="0.65" a="1" />
 					</door>
@@ -605,12 +605,8 @@
 					</sign>
 				</landmark_building>
 				<prop name="linktunnel_dg_5301_DNARoot" code="prop_safe_zone_tunnel">
-					<pos x="-60.12" y="-94.82" z="-6.63" />
+					<pos x="-60.22" y="-93.3199" z="-6.63" />
 					<nhpr h="0" p="0" r="0" />
-					<!-- <prop name="tunnelBlocker" code="prop_construction_sign">
-						<pos x="59.8" y="91" z="6.7" />
-						<hpr h="180" p="0" r="0" />
-					</prop> -->
 					<sign code="tunnel_sign_green">
 						<pos x="0" y="0" z="0.53" />
 						<scale x="1.39066" y="1" z="1.61989" />
@@ -634,8 +630,8 @@
 					</sign>
 				</prop>
 				<flat_building id="sz0:random_DNARoot" width="20">
-					<pos x="-68.3563" y="225.257" z="10" />
-					<nhpr h="45" p="0" r="0" />
+					<pos x="18.6437" y="350.457" z="13" />
+					<nhpr h="0" p="0" r="0" />
 					<wall height="4" code="wall_basement_rock_ur">
 						<color r="0.22" g="0.74" b="0.62" a="1" />
 						<windows code="window_sm_pointed_ur" count="0">
@@ -655,23 +651,23 @@
 			</node>
 			<group name="fishing_pond_1">
 				<prop name="npc_fisherman_origin_0" code="DCS">
-					<pos x="67.1" y="10.9" z="0" />
+					<pos x="88.044" y="36.495" z="0" />
 					<nhpr h="21" p="0" r="0" />
 				</prop>
 				<prop name="fishing_spot_DNARoot" code="fishing_spot">
-					<pos x="40.6141" y="39.7708" z="0.322857" />
+					<pos x="58.927" y="50.381" z="0.36" />
 					<nhpr h="-60" p="0" r="0" />
 				</prop>
 				<prop name="fishing_spot_DNARoot" code="fishing_spot">
-					<pos x="45.5303" y="59.0542" z="0.301811" />
+					<pos x="53.948" y="83.746" z="0.36" />
 					<nhpr h="-150" p="0" r="0" />
 				</prop>
 				<prop name="fishing_spot_DNARoot" code="fishing_spot">
-					<pos x="64.3143" y="41.6922" z="0.27585" />
+					<pos x="93.892" y="58.599" z="0.35" />
 					<nhpr h="75" p="0" r="0" />
 				</prop>
 				<prop name="fishing_spot_DNARoot" code="fishing_spot">
-					<pos x="62.5348" y="57.8678" z="0.231369" />
+					<pos x="88.948" y="83.936" z="0.35" />
 					<nhpr h="135" p="0" r="0" />
 				</prop>
 			</group>
