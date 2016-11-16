@@ -673,16 +673,16 @@
 			</group>
 			<landmark_building id="tb1:toon_landmark_DG_gag_shop_DNARoot" code="toon_landmark_DG_gag_shop" type="gagshop">
 				<title>Gag Shop</title>
-				<pos x="-10.2301" y="217.38" z="10" />
-				<nhpr h="180" p="0" r="0" />
+				<pos x="-35.83 " y="323.48" z="14" />
+				<nhpr h="-135" p="0" r="0" />
 				<door code="door_double_curved_ur">
 					<color r="0.8" g="0.54" b="0.61" a="1" />
 				</door>
 			</landmark_building>
 			<landmark_building id="tb2:toon_landmark_hqDG_DNARoot" code="toon_landmark_hqDG" type="hq">
 				<title>Toon HQ</title>
-				<pos x="-45.9641" y="39.1958" z="0" />
-				<nhpr h="-45" p="0" r="0" />
+				<pos x="-1.56411" y="93.9958" z="0" />
+				<nhpr h="177" p="0" r="0" />
 				<prop name="animated_prop_HQPeriscopeAnimatedProp_DNARoot" code="animated_prop_HQPeriscopeAnimatedProp">
 					<pos x="7.17" y="3.17" z="20.07" />
 					<nhpr h="180" p="0" r="0" />
@@ -691,8 +691,8 @@
 			</landmark_building>
 			<landmark_building id="tb5:toon_landmark_DG_pet_shop_DNARoot" code="toon_landmark_DG_pet_shop" type="petshop">
 				<title />
-				<pos x="43.9925" y="6.83166" z="0.18034" />
-				<nhpr h="-171" p="0" r="0" />
+				<pos x="122.393" y="54.3316" z="0.18034" />
+				<nhpr h="-90" p="0" r="0" />
 				<door code="door_double_curved_ur">
 					<color r="0.73" g="0.55" b="0.86" a="1" />
 				</door>
@@ -711,24 +711,29 @@
 				</sign>
 			</landmark_building>
 			<prop name="neighborhood_sign_sellBotHQ_DNARoot" code="neighborhood_sign_sellBotHQ">
-				<pos x="-12.0904" y="1.48476" z="0" />
-				<nhpr h="0" p="0" r="0" />
+				<pos x="-6.1904" y="28.1848" z="0" />
+				<nhpr h="-45" p="0" r="0" />
 			</prop>
 			<prop name="neighborhood_sign_sellBotHQ_DNARoot" code="neighborhood_sign_sellBotHQ">
-				<pos x="11.7463" y="1.19921" z="0" />
-				<nhpr h="180" p="0" r="0" />
+				<pos x="5.7463" y="28.3992" z="0" />
+				<nhpr h="-135" p="0" r="0" />
 			</prop>
 			<prop name="daisys_garden_ext_DNARoot" code="daisys_garden_ext">
-				<pos x="-49.7454" y="233.211" z="9.99" />
-				<nhpr h="210" p="0" r="0" />
+				<pos x="-14.9747" y="335.34" z="13.99" />
+				<nhpr h="-180" p="0" r="0" />
+			</prop>
+			<prop name="daisys_garden_ext_DNARoot" code="daisys_garden_ext">
+				<pos x="108.817" y="331.185" z="13.9" />
+				<nhpr h="-30" p="0" r="0" />
+				<scale x="3" y="3" z="3" />
 			</prop>
 			<prop name="prop_party_gate_DNARoot" code="prop_party_gate">
-				<pos x="-54.0251" y="224.782" z="10.02" />
-				<nhpr h="30" p="0" r="0" />
+				<pos x="66.9977" y="324.316" z="14.02" />
+				<nhpr h="-45" p="0" r="0" />
 			</prop>
 			<flat_building id="tb0:random_DNARoot" width="10">
-				<pos x="-24.6717" y="228.875" z="10" />
-				<nhpr h="293.962" p="0" r="0" />
+				<pos x="98.47" y="308.116" z="13" />
+				<nhpr h="-90" p="0" r="0" />
 				<wall height="3" code="wall_basement_rock_ur">
 					<color r="0.8" g="0.54" b="0.61" a="1" />
 					<windows code="window_sm_pointed_ur" count="0">
@@ -752,8 +757,108 @@
 				</wall>
 			</flat_building>
 			<flat_building id="tb0:random_DNARoot" width="15">
-				<pos x="-34.8837" y="239.189" z="10" />
-				<nhpr h="315" p="0" r="0" />
+				<pos x="88.1162" y="318.289" z="13" />
+				<nhpr h="-45" p="0" r="0" />
+				<wall height="3" code="wall_basement_rock_ur">
+					<color r="0.8" g="0.54" b="0.61" a="1" />
+					<windows code="window_sm_pointed_ur" count="0">
+						<color r="0.27" g="1" b="0.42" a="1" />
+					</windows>
+				</wall>
+				<wall height="13" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ul" count="2">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+				</wall>
+				<wall height="9" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ul" count="2">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+					<cornice code="cornice_brick_ur">
+						<color r="1" g="0.65" b="0.81" a="1" />
+					</cornice>
+				</wall>
+			</flat_building>
+			<flat_building id="tb0:random_DNARoot" width="10">
+				<pos x="123.17" y="239.316" z="13" />
+				<nhpr h="-60" p="0" r="0" />
+				<wall height="3" code="wall_basement_rock_ur">
+					<color r="0.8" g="0.54" b="0.61" a="1" />
+					<windows code="window_sm_pointed_ur" count="0">
+						<color r="0.27" g="1" b="0.42" a="1" />
+					</windows>
+				</wall>
+				<wall height="13" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ur" count="1">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+				</wall>
+				<wall height="9" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ur" count="1">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+					<cornice code="cornice_brick_ur">
+						<color r="1" g="0.65" b="0.81" a="1" />
+					</cornice>
+				</wall>
+			</flat_building>
+			<flat_building id="tb0:random_DNARoot" width="15">
+				<pos x="98.4162" y="298.289" z="13" />
+				<nhpr h="-75" p="0" r="0" />
+				<wall height="3" code="wall_basement_rock_ur">
+					<color r="0.8" g="0.54" b="0.61" a="1" />
+					<windows code="window_sm_pointed_ur" count="0">
+						<color r="0.27" g="1" b="0.42" a="1" />
+					</windows>
+				</wall>
+				<wall height="13" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ul" count="2">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+				</wall>
+				<wall height="9" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ul" count="2">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+					<cornice code="cornice_brick_ur">
+						<color r="1" g="0.65" b="0.81" a="1" />
+					</cornice>
+				</wall>
+			</flat_building>
+			<flat_building id="tb0:random_DNARoot" width="10">
+				<pos x="105.07" y="304.316" z="13" />
+				<nhpr h="-90" p="0" r="0" />
+				<wall height="3" code="wall_basement_rock_ur">
+					<color r="0.8" g="0.54" b="0.61" a="1" />
+					<windows code="window_sm_pointed_ur" count="0">
+						<color r="0.27" g="1" b="0.42" a="1" />
+					</windows>
+				</wall>
+				<wall height="13" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ur" count="1">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+				</wall>
+				<wall height="9" code="wall_lg_brick_ur">
+					<color r="1" g="1" b="0.39" a="1" />
+					<windows code="window_sm_curved_ur" count="1">
+						<color r="1" g="1" b="0.58" a="1" />
+					</windows>
+					<cornice code="cornice_brick_ur">
+						<color r="1" g="0.65" b="0.81" a="1" />
+					</cornice>
+				</wall>
+			</flat_building>
+			<flat_building id="tb0:random_DNARoot" width="15">
+				<pos x="38.5162" y="350.389" z="13" />
+				<nhpr h="-30" p="0" r="0" />
 				<wall height="3" code="wall_basement_rock_ur">
 					<color r="0.8" g="0.54" b="0.61" a="1" />
 					<windows code="window_sm_pointed_ur" count="0">
@@ -777,8 +882,8 @@
 				</wall>
 			</flat_building>
 			<flat_building id="tb0:random_DNARoot" width="20">
-				<pos x="-54.3539" y="239.133" z="10" />
-				<nhpr h="0" p="0" r="0" />
+				<pos x="51.3461" y="343.033" z="13" />
+				<nhpr h="-30" p="0" r="0" />
 				<wall height="4" code="wall_basement_rock_ur">
 					<color r="0.22" g="0.74" b="0.62" a="1" />
 					<windows code="window_sm_pointed_ur" count="0">
