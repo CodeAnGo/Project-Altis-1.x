@@ -1,49 +1,32 @@
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed.DistributedNodeAI import DistributedNodeAI
+import GardenGlobals
 
 class DistributedLawnDecorAI(DistributedNodeAI):
     notify = DirectNotifyGlobal.directNotify.newCategory("DistributedLawnDecorAI")
-    
-    def __init__(self, air):
-        DistributedNodeAI.__init__(self, air)
-        self.plot = 0
-        self.h = 0
-        self.pos = (0, 0, 0)
-        self.ownerIndex = 0
 
-    def setPlot(self, plot):
-        self.plot = plot
+    def __init__(self, air, ownerId):
+        DistributedNodeAI.__init__(self, air)
+
+        self.ownerId = ownerId
+
+        self.plotIndex = None
+        self.plotType = None
+
+        self.pos = None
+        self.heading = None
 
     def getPlot(self):
-        return self.plot
-        
-    def setHeading(self, h):
-        self.setH(h)
-        self.h = h
-        
+        return self.plotIndex
+
     def getHeading(self):
-        return self.h
-        
-    def setPosition(self, x, y, z):
-        self.setPos(x, y, z)
-        self.pos = (x, y, z)
-        
-    def d_setPosition(self, x, y, z):
-        self.sendUpdate('setPos', [x, y, z])
-        self.sendUpdate('setPosition', [x, y, z])
-        
-    def b_setPosition(self, x, y, z):
-        self.setPosition(x, y, z)
-        self.d_setPosition(x, y, z)
-    
+        return self.heading
+
     def getPosition(self):
         return self.pos
-        
+
     def getOwnerIndex(self):
         return self.ownerIndex
-
-    def setOwnerIndex(self, index):
-        self.ownerIndex = index
 
     def plotEntered(self):
         pass
@@ -60,3 +43,12 @@ class DistributedLawnDecorAI(DistributedNodeAI):
     def interactionDenied(self, todo0):
         pass
 
+    def construct(self, gardenData):
+        self.plotIndex = gardenData.getUint8()
+
+        self.plotType = GardenGlobals.getPlotType(self.ownerIndex, self.plotIndex)
+        self.pos = GardenGlobals.getPlotPos(self.ownerIndex, self.plotIndex)
+        self.heading = GardenGlobals.getPlotHeading(self.ownerIndex, self.plotIndex)
+
+    def pack(self, gardenData):
+        gardenData.addUint8(self.plotIndex)

@@ -1274,14 +1274,32 @@ estateBoxes = (flowerBoxes0,
  flowerBoxes4,
  flowerBoxes5)
 
+def getGardenPlots(houseIndex):
+    return estatePlots[houseIndex]
+
+
+def getPlotPos(houseIndex, plotIndex):
+    plotData = estatePlots[houseIndex][plotIndex]
+    return plotData[0], plotData[1], 0
+
+
+def getPlotHeading(houseIndex, plotIndex):
+    plotData = estatePlots[houseIndex][plotIndex]
+    return plotData[2]
+
+
+def getPlotType(houseIndex, plotIndex):
+    plotData = estatePlots[houseIndex][plotIndex]
+    return plotData[3]
+
+
 def whatCanBePlanted(plotIndex, hardPointIndex):
-    retval = INVALID_TYPE
     if plotIndex < len(estatePlots) and plotIndex >= 0:
         if hardPointIndex < len(estatePlots[plotIndex]) and hardPointIndex >= 0:
             if len(estatePlots[plotIndex][hardPointIndex]) >= 4:
-                retval = estatePlots[plotIndex][hardPointIndex][3]
-    return retval
+                return estatePlots[plotIndex][hardPointIndex][3]
 
+    return INVALID_TYPE
 
 MAGIC_BEAN_SUBTYPE = 0
 GARDEN_ITEM_SUBTYPE = 1
@@ -1496,3 +1514,5 @@ TrophyDict = {0: (TTLocalizer.GardenTrophyNameDict[0],),
  1: (TTLocalizer.GardenTrophyNameDict[1],),
  2: (TTLocalizer.GardenTrophyNameDict[2],),
  3: (TTLocalizer.GardenTrophyNameDict[3],)}
+
+EmptyPlot = 0

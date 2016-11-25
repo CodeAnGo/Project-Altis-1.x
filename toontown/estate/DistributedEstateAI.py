@@ -436,31 +436,13 @@ class DistributedEstateAI(DistributedObjectAI):
         self.d_setSlot5Items(self.items[5])
 
     def placeStarterGarden(self, avatar):
-        items = []
-        if avatar.getGardenStarted():
+        if avatar is None:
             return
-        avId = avatar.getDoId()
-        houseIndex = self.toons.index(avId)
-        plots = GardenGlobals.estatePlots[houseIndex]
-        boxes = GardenGlobals.estateBoxes[houseIndex]
-        for i in xrange(len(boxes)):
-            items.append([2, i, 0, 0, 0])
-            box = DistributedGardenBoxAI(self.air)
-            box.setPlot(i)
-            box.setOwnerIndex(houseIndex)
-            box.setTypeIndex(boxes[i][3])
-            box.setPosition(boxes[i][0], boxes[i][1], 20)
-            box.setHeading(boxes[i][2])
-            box.generateWithRequired(self.zoneId)
-        for i in xrange(len(plots)):
-            items.append([1, i, 0, 0, 0])
-            plot = DistributedGardenPlotAI(self.air)
-            plot.setPlot(i)
-            plot.setOwnerIndex(houseIndex)
-            if plots[i][3] != GardenGlobals.FLOWER_TYPE:
-                plot.setPosition(plots[i][0], plots[i][1], 20)
-                plot.setHeading(plots[i][2])
-            plot.generateWithRequired(self.zoneId)
-        self.items[houseIndex] = items
-        self.updateItems()
-        avatar.b_setGardenStarted(1)
+        
+        for house in self.houses:
+            if house:
+                if house.getAvatarId() == avatar.doId:
+                    house.placeStarterGarden()
+                    return
+                
+        self.notify.warning('%s doesnt own a house and tried to start a garden!?' % avatar.doId)

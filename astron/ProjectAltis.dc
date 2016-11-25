@@ -1735,6 +1735,7 @@ dclass DistributedHouse : DistributedObject {
   setInteriorInitialized(uint8 initialized = 0) required db;
   setCannonEnabled(uint8 enabled) required;
   setHouseReady() broadcast ram;
+  setGardenData(blob data = "") required db;
 };
 
 dclass DistributedHouseInterior : DistributedObject {
