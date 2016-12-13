@@ -18,19 +18,27 @@ class DistributedRainManagerAI(DistributedWeatherMGRAI):
     
     def __init__(self, air):
         DistributedWeatherMGRAI.__init__(self, air)
+        self.interval = 150
 
     def start(self, alwaysRain = False):
         DistributedWeatherMGRAI.start(self)
-                
-
-        if alwaysRain:
-            self.b_setState('Rain')
+        
+        # run a task to randomly start and stop snow, rain
+        taskMgr.doMethodLater(self.interval, self.tick, 'weather-tick')
+    
+    def tick(self, task):
+        if base.config.GetBool('want-rain'):
+            if random.choice([True, False]):
+                self.b_setState('Rain')
+            else:
+                self.b_setState('Sunny')
         else:
-            Sequence(
-                Func(self.b_setState, 'Sunny'),
-                Wait(1800),
-                Func(self.b_setState, 'Rain'),
-                Wait(900)).loop()
+            self.b_setState('Snow')
+        
+        return task.again
+    
+    def stop(self):
+        taskMgr.remove('weather-tick')
 
     def enterRain(self):
         pass
