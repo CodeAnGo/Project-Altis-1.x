@@ -7,7 +7,7 @@ from toontown.ai import DistributedTrickOrTreatTargetAI
 
 class BRHoodAI(HoodAI.HoodAI):
     __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
-                 'buildingManagers', 'suitPlanners', 'trolley')
+                 'buildingManagers', 'suitPlanners', 'trolley', 'PolarPlaceEffectManager', 'TrickOrTreatTargetManager')
     
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
@@ -15,6 +15,8 @@ class BRHoodAI(HoodAI.HoodAI):
                                ToontownGlobals.TheBrrrgh)
         
         self.trolley = None
+        self.PolarPlaceEffectManager = None
+        self.TrickOrTreatTargetManager = None
         self.startup()
 
     def startup(self):
