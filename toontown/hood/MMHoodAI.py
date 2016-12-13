@@ -6,6 +6,9 @@ from toontown.safezone import DistributedTrolleyAI
 from toontown.ai import DistributedTrickOrTreatTargetAI
 
 class MMHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners', 'trolley')
+
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.MinniesMelodyland,
