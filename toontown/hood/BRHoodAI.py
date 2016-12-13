@@ -4,13 +4,15 @@ from toontown.safezone import DistributedTrolleyAI
 from toontown.toonbase import ToontownGlobals
 from toontown.ai import DistributedPolarPlaceEffectMgrAI
 from toontown.ai import DistributedTrickOrTreatTargetAI
+
 class BRHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners')
+    
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.TheBrrrgh,
                                ToontownGlobals.TheBrrrgh)
-
-        self.trolley = None
 
         self.startup()
 
