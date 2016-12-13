@@ -8,6 +8,9 @@ from toontown.ai import DistributedTrickOrTreatTargetAI
 from toontown.safezone import DistributedTrolleyAI
 
 class DGHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 'buildingManagers', 
+		 'suitPlanners', 'trolley', 'butterflies', 'flower', 'classicChar')
+
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.DaisyGardens,
