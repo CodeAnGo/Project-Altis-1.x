@@ -7,6 +7,8 @@ from toontown.toon import NPCToons
 import HoodAI
 
 class DDHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners', 'trolley', 'boat')
 	
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
