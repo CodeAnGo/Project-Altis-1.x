@@ -9,8 +9,10 @@ from toontown.racing.DistributedViewPadAI import DistributedViewPadAI
 from toontown.racing.DistributedStartingBlockAI import DistributedViewingBlockAI
 from toontown.toonbase import ToontownGlobals
 
-
 class GSHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 'buildingManagers', 
+                 'suitPlanners', 'racingPads', 'viewingPads', 'viewingBlocks', 'startingBlocks', 'leaderBoards', 'classicChar')
+    
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.GoofySpeedway,
