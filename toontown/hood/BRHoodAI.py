@@ -7,13 +7,14 @@ from toontown.ai import DistributedTrickOrTreatTargetAI
 
 class BRHoodAI(HoodAI.HoodAI):
     __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
-                 'buildingManagers', 'suitPlanners')
+                 'buildingManagers', 'suitPlanners', 'trolley')
     
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.TheBrrrgh,
                                ToontownGlobals.TheBrrrgh)
-
+        
+        self.trolley = None
         self.startup()
 
     def startup(self):
