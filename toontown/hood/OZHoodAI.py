@@ -7,8 +7,10 @@ from toontown.dna.DNAParser import DNAGroup, DNAVisGroup
 from toontown.safezone.DistributedPicnicBasketAI import DistributedPicnicBasketAI
 from toontown.hood import ZoneUtil
 
-
 class OZHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners', 'timer', 'picnicTables', 'gameTables')
+    
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.OutdoorZone,
