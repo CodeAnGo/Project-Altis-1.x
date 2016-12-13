@@ -5,8 +5,10 @@ from toontown.toonbase import ToontownGlobals
 from toontown.ai import DistributedResistanceEmoteMgrAI
 from toontown.ai import DistributedTrickOrTreatTargetAI
 
-
 class DLHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners', 'trolley')
+    
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.DonaldsDreamland,
