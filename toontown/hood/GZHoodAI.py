@@ -5,8 +5,10 @@ from toontown.hood import ZoneUtil
 from toontown.safezone.DistributedGolfKartAI import DistributedGolfKartAI
 from toontown.toonbase import ToontownGlobals
 
-
 class GZHoodAI(HoodAI.HoodAI):
+    __slots__ = ('air', 'zoneId', 'canonicalHoodId', 'fishingPonds', 'partyGates', 'treasurePlanner', 
+                 'buildingManagers', 'suitPlanners', 'golfKarts')
+    
     def __init__(self, air):
         HoodAI.HoodAI.__init__(self, air,
                                ToontownGlobals.GolfZone,
