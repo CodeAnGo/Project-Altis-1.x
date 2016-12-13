@@ -21,6 +21,12 @@ class ToonHood(Hood.Hood):
         self.minigameDoneEvent = 'minigameDone'
         self.safeZoneLoaderClass = None
         self.townLoaderClass = None
+        self.loader = None
+        self.purchaseDoneEvent = None
+        self.purchase = None
+        self.placeDoneEvent = None
+        self.place = None
+        self.doneStatus = None
         self.fsm = ClassicFSM.ClassicFSM('Hood', [State.State('start', self.enterStart, self.exitStart, ['townLoader', 'safeZoneLoader']),
          State.State('townLoader', self.enterTownLoader, self.exitTownLoader, ['quietZone',
           'safeZoneLoader',
@@ -42,7 +48,6 @@ class ToonHood(Hood.Hood):
           'minigame']),
          State.State('final', self.enterFinal, self.exitFinal, [])], 'start', 'final')
         self.fsm.enterInitialState()
-        return
 
     def load(self):
         Hood.Hood.load(self)
@@ -119,7 +124,6 @@ class ToonHood(Hood.Hood):
             self.fsm.request('minigame')
         else:
             self.notify.error('handlePurchaseDone: unknown mode')
-        return
 
     def enterSuitInterior(self, requestStatus = None):
         self.placeDoneEvent = 'suit-interior-done'
@@ -136,7 +140,6 @@ class ToonHood(Hood.Hood):
         self.place.unload()
         self.place = None
         base.cr.playGame.setPlace(self.place)
-        return
 
     def handleSuitInteriorDone(self):
         doneStatus = self.place.getDoneStatus()
@@ -161,7 +164,6 @@ class ToonHood(Hood.Hood):
         self.place.unload()
         self.place = None
         base.cr.playGame.setPlace(self.place)
-        return
 
     def handleCogdoInteriorDone(self):
         doneStatus = self.place.getDoneStatus()
