@@ -13,7 +13,7 @@ from toontown.environment.TemperatureManagerAI import TemperatureManagerAI
 from toontown.distributed.ToontownInternalRepository import ToontownInternalRepository
 from toontown.toon import NPCToons
 from toontown.hood import TTHoodAI, DDHoodAI, DGHoodAI, BRHoodAI, MMHoodAI, DLHoodAI, OZHoodAI, GSHoodAI, GZHoodAI, ZoneUtil
-from toontown.hood import SellbotHQAI, CashbotHQAI, LawbotHQAI, BossbotHQAI
+from toontown.hood import SellbotHQAI, CashbotHQAI, LawbotHQAI, BossbotHQAI, BoardbotHQAI
 from toontown.toonbase import ToontownGlobals
 from direct.distributed.PyDatagram import *
 from otp.ai.AIZoneData import *
@@ -280,6 +280,10 @@ class ToontownAIRepository(ToontownInternalRepository):
 
         if config.GetBool('want-bbhq', True):
             self.hoods.append(BossbotHQAI.BossbotHQAI(self))
+            clearQueue()
+            
+        if config.GetBool('want-bdhq', True):
+            self.hoods.append(BoardbotHQAI.BoardbotHQAI(self))
             clearQueue()
 
         for sp in self.suitPlanners.values():
