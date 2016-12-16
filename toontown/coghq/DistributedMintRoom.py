@@ -222,3 +222,7 @@ class DistributedMintRoom(DistributedLevel.DistributedLevel, MintRoomBase.MintRo
 
     def __repr__(self):
         return str(self)
+
+    def reportModelSpecSyncError(self, msg): #we need this cause the unit spec and model Num do match to see what i mean un hash next line
+        #self.notify.error('%s\n\nyour spec does not match the level model\nuse SpecUtil.updateSpec, then restart your AI and client' % msg)
+        pass
