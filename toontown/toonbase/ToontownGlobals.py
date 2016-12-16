@@ -164,6 +164,7 @@ LighthouseLane = 1300
 SillyStreet = 2100
 LoopyLane = 2200
 PunchlinePlace = 2300
+Downtown = 2400
 WalrusWay = 3100
 SleetStreet = 3200
 PolarPlace = 3300
@@ -177,7 +178,7 @@ OakStreet = 5300
 LullabyLane = 9100
 PajamaPlace = 9200
 ToonHall = 2513
-HoodHierarchy = {ToontownCentral: (SillyStreet, LoopyLane, PunchlinePlace),
+HoodHierarchy = {ToontownCentral: (SillyStreet, LoopyLane, PunchlinePlace, Downtown),
  DonaldsDock: (BarnacleBoulevard, SeaweedStreet, LighthouseLane),
  TheBrrrgh: (WalrusWay, SleetStreet, PolarPlace),
  MinniesMelodyland: (AltoAvenue, BaritoneBoulevard, TenorTerrace, SopranoStreet),
