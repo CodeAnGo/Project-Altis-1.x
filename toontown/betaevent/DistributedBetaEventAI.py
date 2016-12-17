@@ -3,7 +3,7 @@ from direct.interval.IntervalGlobal import *
 from toontown.toonbase import ToontownGlobals
 
 
-class DistributedBetaEventAI(DistributedBetaEventAI):
+class DistributedBetaEventAI(DistributedEventAI):
     notify = directNotify.newCategory('DistributedBetaEventAI')
 
     def __init__(self, air):

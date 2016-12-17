@@ -28,7 +28,7 @@ class DistributedEventAI(DistributedObjectAI, FSM):
     def getState(self):
         return self.state
         
-@magicWord(category=CATEGORY_PROGRAMMER, types=[str])
+@magicWord(category=CATEGORY_CHARACTERSTATS, types=[str])
 def betaevent(state):
     invoker = spellbook.getInvoker()
     invasion = None
