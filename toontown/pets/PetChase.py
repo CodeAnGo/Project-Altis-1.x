@@ -1,5 +1,6 @@
-from pandac.PandaModules import *
-from direct.showbase.PythonUtil import reduceAngle
+from panda3d.core import *
+from panda3d.direct import *
+from toontown.toonbase.ToonPythonUtil import reduceAngle
 from otp.movement import Impulse
 import math
 

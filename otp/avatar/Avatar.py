@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from otp.nametag.Nametag import Nametag
 from otp.nametag.NametagGroup import NametagGroup
 from otp.nametag.NametagConstants import CFSpeech, CFThought, CFTimeout, CFPageButton, CFNoQuitButton, CFQuitButton
@@ -29,11 +30,10 @@ class Avatar(Actor, ShadowCaster):
     ManagesNametagAmbientLightChanged = False
 
     def __init__(self, other = None):
-        self.name = ''
+        self._name = ''
         self.npcType = None
         try:
             self.Avatar_initialized
-            return
         except:
             self.Avatar_initialized = 1
 
@@ -82,7 +82,6 @@ class Avatar(Actor, ShadowCaster):
         self.__chatLocal = 0
         self.__currentDialogue = None
         self.whitelistChatFlags = 0
-        return
 
     def delete(self):
         try:

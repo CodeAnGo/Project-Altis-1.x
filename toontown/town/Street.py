@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.battle.BattleProps import *
 from toontown.battle.BattleSounds import *
 from toontown.distributed.ToontownMsgTypes import *

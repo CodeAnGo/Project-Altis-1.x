@@ -1,5 +1,6 @@
 import random
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
 from direct.directnotify import DirectNotifyGlobal
 from toontown.toonbase import ToontownGlobals, ToontownTimer

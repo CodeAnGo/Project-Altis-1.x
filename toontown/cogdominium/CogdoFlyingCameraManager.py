@@ -3,7 +3,7 @@ from pandac.PandaModules import NodePath, Vec3
 from pandac.PandaModules import CollisionTraverser, CollisionHandlerQueue
 from pandac.PandaModules import CollisionRay, CollisionNode
 from math import pi, sin, cos
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.toonbase.ToonPythonUtil import bound as clamp
 from otp.otpbase import OTPGlobals
 from toontown.toonbase import ToontownGlobals
 import CogdoFlyingGameGlobals as Globals

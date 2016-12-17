@@ -2,7 +2,8 @@ from toontown.toonbase import ToontownGlobals
 import ShtikerPage
 from direct.directnotify import DirectNotifyGlobal
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import TTLocalizer
 from toontown.fishing import FishPicker
 from toontown.fishing import FishBrowser

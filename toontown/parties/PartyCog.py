@@ -5,7 +5,7 @@ from direct.interval.MetaInterval import Sequence, Parallel
 from direct.interval.FunctionInterval import Func, Wait
 from direct.interval.SoundInterval import SoundInterval
 from direct.interval.LerpInterval import LerpScaleInterval, LerpFunc
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.toonbase.ToonPythonUtil import bound as clamp
 from direct.task import Task
 from direct.fsm.FSM import FSM
 from pandac.PandaModules import CollisionTube, CollisionNode, CollisionSphere

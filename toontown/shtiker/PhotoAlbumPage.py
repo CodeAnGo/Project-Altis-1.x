@@ -1,9 +1,11 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import ShtikerPage
 import ShtikerBook
 from direct.gui.DirectGui import *
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import TTLocalizer
 import os
 import string

@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
 from direct.directtools.DirectGeometry import *
@@ -6,7 +7,8 @@ from ElevatorConstants import *
 from ElevatorUtils import *
 from SuitBuildingGlobals import *
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import ToontownGlobals
 from direct.directnotify import DirectNotifyGlobal
 from direct.fsm import ClassicFSM, State

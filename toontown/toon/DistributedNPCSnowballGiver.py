@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from DistributedNPCToonBase import *
 from toontown.quest import QuestParser
 from toontown.quest import QuestChoiceGui

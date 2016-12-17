@@ -1,8 +1,10 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.fsm import FSM
 from direct.distributed import DistributedSmoothNode
 from direct.interval.IntervalGlobal import *
@@ -18,7 +20,7 @@ from toontown.effects.Sparks import Sparks
 from direct.interval.ProjectileInterval import *
 from toontown.battle.BattleProps import *
 import random
-from direct.showbase.PythonUtil import randFloat
+from toontown.toonbase.ToonPythonUtil import randFloat
 from direct.task.Task import Task
 from otp.nametag import NametagGlobals
 import math

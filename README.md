@@ -5,6 +5,7 @@ A vision of what Toontown Online could have been in 2016.
  
 * Josh Zimmer - Founder, Game Programmer & Project Manager
 * Owen - Project Supervisor & Moderative Staff Director
+* Dubito- Security Manager & Game Programmer
 * Dank Mickey/ KHDecoder - Game Programmer, Texture Editor, & Co-Founder
 * Stormish - 3D Modeler & Animator
 * Malverde - Game & Networking Programmer
@@ -13,7 +14,6 @@ A vision of what Toontown Online could have been in 2016.
 * Drew - Game Programmer
 * James Midnight - Texture Artist
 * Sir Tubby Cheesyfish- Game Programmer
-* Dubito- Game Programmer & Security Manager
 * SkippsDev- Game Programmer
 * John Linderman- 3D Modeler & Game Programmer
 

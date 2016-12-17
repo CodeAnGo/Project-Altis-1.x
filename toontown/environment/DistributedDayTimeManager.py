@@ -24,26 +24,26 @@ class DistributedDayTimeManager(DistributedWeatherMGR):
         self.hood = base.cr.playGame.hood
         self.interval = 150
         self.hour2sky = {
-            0: 'mml',
-            1: 'mml',
-            2: 'mml',
-            3: 'day',
-            4: 'day',
-            5: 'day',
-            6: 'day',
-            7: 'day',
+            0: 'night',
+            1: 'night',
+            2: 'night',
+            3: 'night',
+            4: 'night',
+            5: 'night',
+            6: 'mml',
+            7: 'mml',
             8: 'day',
             9: 'day',
             10: 'day',
             11: 'day',
             12: 'day',
             13: 'day',
-            14: 'mml',
-            15: 'mml',
-            16: 'mml',
-            17: 'night',
-            18: 'night',
-            19: 'night',
+            14: 'day',
+            15: 'day',
+            16: 'day',
+            17: 'mml',
+            18: 'mml',
+            19: 'mml',
             20: 'night',
             21: 'night',
             22: 'night',
@@ -67,7 +67,8 @@ class DistributedDayTimeManager(DistributedWeatherMGR):
 
     def delete(self):
         self.currSeq.finish()
-        render.setColorScale(Vec4(1, 1, 1, 1))
         DistributedWeatherMGR.delete(self)
+        render.setColorScale(Vec4(1, 1, 1, 1))
+
 
 

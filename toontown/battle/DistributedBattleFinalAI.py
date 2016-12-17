@@ -7,7 +7,7 @@ import DistributedBattleBaseAI
 from direct.task import Task
 from direct.directnotify import DirectNotifyGlobal
 from direct.fsm import State
-from direct.showbase.PythonUtil import addListsByValue
+from toontown.toonbase.ToonPythonUtil import addListsByValue
 import random
 import types
 

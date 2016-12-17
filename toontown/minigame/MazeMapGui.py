@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import Enum
+from toontown.toonbase.ToonPythonUtil import Enum
 from direct.gui.DirectGui import DirectFrame, DGG
 from pandac.PandaModules import Vec2, VBase4D
 from pandac.PandaModules import CardMaker, NodePath

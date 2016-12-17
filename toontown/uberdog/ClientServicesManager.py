@@ -3,7 +3,8 @@ from direct.directnotify.DirectNotifyGlobal import directNotify
 from otp.distributed.PotentialAvatar import PotentialAvatar
 from otp.otpbase import OTPLocalizer, OTPGlobals
 from otp.margins.WhisperPopup import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 
 class ClientServicesManager(DistributedObjectGlobal):
     notify = directNotify.newCategory('ClientServicesManager')

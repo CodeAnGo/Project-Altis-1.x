@@ -1,7 +1,7 @@
 from direct.directnotify import DirectNotifyGlobal
 import string
 import LevelConstants
-from direct.showbase.PythonUtil import lineInfo, uniqueElements
+from toontown.toonbase.ToonPythonUtil import lineInfo, uniqueElements
 import types
 
 class Level:

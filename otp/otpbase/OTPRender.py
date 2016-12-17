@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 MainCameraBitmask = BitMask32.bit(0)
 ReflectionCameraBitmask = BitMask32.bit(1)
 ShadowCameraBitmask = BitMask32.bit(2)

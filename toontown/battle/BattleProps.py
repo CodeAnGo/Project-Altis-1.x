@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.actor import Actor
 from direct.directnotify import DirectNotifyGlobal
 from otp.otpbase import OTPGlobals

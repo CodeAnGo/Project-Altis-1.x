@@ -3,7 +3,7 @@ from direct.fsm import FSM
 from direct.interval.IntervalGlobal import *
 from direct.task import Task
 from direct.distributed.ClockDelta import globalClockDelta
-from direct.showbase.PythonUtil import lerp
+from toontown.toonbase.ToonPythonUtil import lerp
 from toontown.pets import PetTricks
 from toontown.toon import DistributedToonAI
 

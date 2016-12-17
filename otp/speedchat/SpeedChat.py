@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import boolEqual
+from toontown.toonbase.ToonPythonUtil import boolEqual
 from SpeedChatTypes import *
 from SCSettings import SCSettings
 from SCTerminal import SCWhisperModeChangeEvent

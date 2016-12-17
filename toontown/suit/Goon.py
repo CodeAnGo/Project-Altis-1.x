@@ -1,8 +1,10 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.actor import Actor
 from otp.avatar import Avatar
 from toontown.toonbase import ToontownGlobals
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import TTLocalizer
 import GoonGlobals
 import SuitDNA

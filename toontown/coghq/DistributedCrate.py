@@ -1,8 +1,9 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
 from toontown.toonbase.ToontownGlobals import *
 from CrateGlobals import *
-from direct.showbase.PythonUtil import fitSrcAngle2Dest
+from toontown.toonbase.ToonPythonUtil import fitSrcAngle2Dest
 from direct.distributed import DistributedObject
 from direct.directnotify import DirectNotifyGlobal
 import MovingPlatform

@@ -1,14 +1,14 @@
 from SpecImports import *
 from toontown.toonbase import ToontownGlobals
 import random
-a = random.choice([0, 1, 2, 3])
-b = random.choice([0, 1, 2, 3])
-c = random.choice([0, 1, 2, 3])
-d = random.choice([0, 1, 2, 3])
-e = random.choice([0, 1, 2, 3])
-f = random.choice([0, 1, 2, 3])
-g = random.choice([0, 1, 2, 3])
-h = random.choice([0, 1, 2, 3])
+a = random.choice([0, 1, 2, 3, 4])
+b = random.choice([0, 1, 2, 3, 4])
+c = random.choice([0, 1, 2, 3, 4])
+d = random.choice([0, 1, 2, 3, 4])
+e = random.choice([0, 1, 2, 3, 4])
+f = random.choice([0, 1, 2, 3, 4])
+g = random.choice([0, 1, 2, 3, 4])
+h = random.choice([0, 1, 2, 3, 4])
 if a==1:
 	b=0
 	c=0
@@ -108,7 +108,7 @@ BattleCells = {BattleCellId: {'parentEntId': CogParent,
                      'pos': Point3(0, 0, 0)}}
 CogData = [{'parentEntId': CogParent,
   'boss': a,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleCellId,
   'pos': Point3(0, 0, 0),
   'h': 180,
@@ -117,7 +117,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': AParent,
   'boss': b,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleACellId,
   'pos': Point3(0, 0, 0),
   'h': 0,
@@ -126,7 +126,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': BParent,
   'boss': c,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleBCellId,
   'pos': Point3(0, 0, 0),
   'h': 0,
@@ -135,7 +135,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': CParent,
   'boss': d,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleCCellId,
   'pos': Point3(0, 0, 0),
   'h': 180,
@@ -144,7 +144,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': DParent,
   'boss': e,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleDCellId,
   'pos': Point3(0, 0, 0),
   'h': 0,
@@ -153,7 +153,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': EParent,
   'boss': f,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleECellId,
   'pos': Point3(0, 0, 0),
   'h': 0,
@@ -162,7 +162,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': FParent,
   'boss': g,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleFCellId,
   'pos': Point3(0, 0, 0),
   'h': 0,
@@ -171,7 +171,7 @@ CogData = [{'parentEntId': CogParent,
   'skeleton': 1},
  {'parentEntId': GParent,
   'boss': h,
-  'level': 12,
+  'level': 14,
   'battleCell': BattleGCellId,
   'pos': Point3(0, 0, 0),
   'h': 0,

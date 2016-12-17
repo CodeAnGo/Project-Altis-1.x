@@ -1,6 +1,6 @@
 from direct.directnotify import DirectNotifyGlobal
 import AttribDesc
-from direct.showbase.PythonUtil import mostDerivedLast
+from toontown.toonbase.ToonPythonUtil import mostDerivedLast
 
 class EntityTypeDesc:
     notify = DirectNotifyGlobal.directNotify.newCategory('EntityTypeDesc')

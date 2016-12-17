@@ -1,6 +1,7 @@
 from Nametag import *
 from otp.margins.MarginPopup import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import math
 
 class Nametag2d(Nametag, MarginPopup):

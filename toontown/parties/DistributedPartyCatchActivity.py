@@ -4,7 +4,7 @@ from direct.distributed.ClockDelta import globalClockDelta
 from direct.interval.IntervalGlobal import Sequence, Parallel
 from direct.interval.IntervalGlobal import LerpScaleInterval, LerpFunctionInterval, LerpColorScaleInterval, LerpPosInterval
 from direct.interval.IntervalGlobal import SoundInterval, WaitInterval
-from direct.showbase.PythonUtil import Functor, bound, lerp, SerialNumGen
+from toontown.toonbase.ToonPythonUtil import Functor, bound, lerp, SerialNumGen
 from direct.showbase.RandomNumGen import RandomNumGen
 from direct.task.Task import Task
 from direct.distributed import DistributedSmoothNode

@@ -1,5 +1,6 @@
 from direct.interval.IntervalGlobal import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 
 class BlinkingArrows:
 

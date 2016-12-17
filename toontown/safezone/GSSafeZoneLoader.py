@@ -1,7 +1,8 @@
 from direct.directnotify import DirectNotifyGlobal
 from direct.fsm import ClassicFSM, State
 from direct.fsm import State
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.hood import ZoneUtil
 from toontown.launcher import DownloadForceAcknowledge
 from toontown.safezone.SafeZoneLoader import SafeZoneLoader

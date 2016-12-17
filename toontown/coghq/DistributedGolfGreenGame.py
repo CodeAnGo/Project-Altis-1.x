@@ -1,9 +1,10 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
 from direct.particles import ParticleEffect
 from StomperGlobals import *
 from direct.distributed import ClockDelta
-from direct.showbase.PythonUtil import lerp
+from toontown.toonbase.ToonPythonUtil import lerp
 import math
 from otp.level import DistributedEntity
 from direct.directnotify import DirectNotifyGlobal

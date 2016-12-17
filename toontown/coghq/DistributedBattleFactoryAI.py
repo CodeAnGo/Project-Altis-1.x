@@ -4,7 +4,7 @@ from direct.fsm import State
 from direct.fsm import ClassicFSM, State
 from toontown.battle.BattleBase import *
 import CogDisguiseGlobals
-from direct.showbase.PythonUtil import addListsByValue
+from toontown.toonbase.ToonPythonUtil import addListsByValue
 
 class DistributedBattleFactoryAI(DistributedLevelBattleAI.DistributedLevelBattleAI):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedBattleFactoryAI')

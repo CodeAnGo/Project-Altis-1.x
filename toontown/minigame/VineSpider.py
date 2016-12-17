@@ -1,7 +1,8 @@
 from direct.showbase.DirectObject import DirectObject
 from toontown.toonbase.ToontownGlobals import *
 from direct.directnotify import DirectNotifyGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import VineGameGlobals
 
 class VineSpider(NodePath, DirectObject):

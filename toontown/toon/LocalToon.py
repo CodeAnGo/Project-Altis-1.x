@@ -5,13 +5,14 @@ import re
 import zlib
 from direct.interval.IntervalGlobal import *
 from direct.distributed.ClockDelta import *
-from direct.showbase.PythonUtil import *
+from toontown.toonbase.ToonPythonUtil import *
 from direct.gui.DirectGui import *
 from direct.task import Task
 from direct.showbase import PythonUtil
 from direct.directnotify import DirectNotifyGlobal
 from direct.gui import DirectGuiGlobals
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from otp.avatar import LocalAvatar
 from otp.login import LeaveToPayDialog
 from otp.avatar import PositionExaminer

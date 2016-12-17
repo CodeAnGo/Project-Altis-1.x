@@ -6,7 +6,7 @@ from direct.fsm import ClassicFSM, State
 from toontown.battle.BattleBase import *
 import CogDisguiseGlobals
 from toontown.toonbase.ToontownBattleGlobals import getMintCreditMultiplier
-from direct.showbase.PythonUtil import addListsByValue
+from toontown.toonbase.ToonPythonUtil import addListsByValue
 
 class DistributedMintBattleAI(DistributedLevelBattleAI.DistributedLevelBattleAI):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedMintBattleAI')

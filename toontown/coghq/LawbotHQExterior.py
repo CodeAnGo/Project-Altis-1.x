@@ -4,7 +4,8 @@ from direct.fsm import ClassicFSM, State
 from direct.fsm import State
 from toontown.toonbase import ToontownGlobals
 from toontown.building import Elevator
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.coghq import CogHQExterior
 from toontown.dna.DNAParser import loadDNAFileAI, DNAStorage
 from toontown.hood import ZoneUtil

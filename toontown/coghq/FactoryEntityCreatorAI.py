@@ -1,5 +1,5 @@
 from otp.level import EntityCreatorAI
-from direct.showbase.PythonUtil import Functor
+from toontown.toonbase.ToonPythonUtil import Functor
 import DistributedBeanBarrelAI
 import DistributedButtonAI
 import DistributedCrateAI

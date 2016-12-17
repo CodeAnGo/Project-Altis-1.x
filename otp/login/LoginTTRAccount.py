@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.distributed.MsgTypes import *
 from direct.directnotify import DirectNotifyGlobal
 import LoginBase

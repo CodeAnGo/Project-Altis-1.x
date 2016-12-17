@@ -1,10 +1,12 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
 from toontown.battle.BattleProps import *
 from direct.distributed.ClockDelta import *
-from direct.showbase.PythonUtil import Functor
+from toontown.toonbase.ToonPythonUtil import Functor
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.fsm import FSM
 from direct.fsm import ClassicFSM, State
 from direct.fsm import State

@@ -3,7 +3,7 @@ import LogicGate
 import EditMgrAI
 import LevelMgrAI
 import ZoneEntityAI
-from direct.showbase.PythonUtil import Functor
+from toontown.toonbase.ToonPythonUtil import Functor
 
 def createDistributedEntity(AIclass, level, entId, zoneId):
     ent = AIclass(level, entId)

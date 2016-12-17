@@ -4,7 +4,8 @@ from otp.otpbase import OTPTimer
 from toontown.toonbase import TTLocalizer
 from toontown.racing import KartShopGlobals
 from toontown.toonbase.ToonBaseGlobal import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase.ToontownGlobals import *
 import random
 import cPickle

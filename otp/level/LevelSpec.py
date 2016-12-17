@@ -1,6 +1,6 @@
 from pandac import PandaModules as PM
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase.PythonUtil import list2dict, uniqueElements
+from toontown.toonbase.ToonPythonUtil import list2dict, uniqueElements
 import string
 import LevelConstants
 import types

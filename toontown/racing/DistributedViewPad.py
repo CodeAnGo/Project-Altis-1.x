@@ -1,7 +1,8 @@
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed.ClockDelta import *
 from direct.task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.racing.DistributedKartPad import DistributedKartPad
 from toontown.racing.KartShopGlobals import KartGlobals
 if (__debug__):

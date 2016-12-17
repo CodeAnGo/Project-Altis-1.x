@@ -1,9 +1,11 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.gui.DirectGui import *
-from direct.showbase.PythonUtil import *
+from toontown.toonbase.ToonPythonUtil import *
 from direct.interval.IntervalGlobal import *
 from direct.showbase.InputStateGlobal import inputState
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import Avatar
 import ToontownControlManager
 import DistributedAvatar

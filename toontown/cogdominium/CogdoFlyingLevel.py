@@ -2,7 +2,7 @@ from pandac.PandaModules import NodePath, Plane, Vec3, Point3
 from pandac.PandaModules import CollisionPlane, CollisionNode
 from direct.showbase.RandomNumGen import RandomNumGen
 from direct.showbase.DirectObject import DirectObject
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.toonbase.ToonPythonUtil import bound as clamp
 import CogdoUtil
 import CogdoFlyingGameGlobals as Globals
 from CogdoFlyingLevelQuadrant import CogdoFlyingLevelQuadrant

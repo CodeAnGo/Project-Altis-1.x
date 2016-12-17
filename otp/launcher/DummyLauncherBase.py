@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import string
 from direct.showbase.MessengerGlobal import *
 from direct.showbase.DirectObject import DirectObject

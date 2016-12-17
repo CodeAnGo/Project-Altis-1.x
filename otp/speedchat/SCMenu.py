@@ -1,10 +1,11 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.gui.DirectGui import *
 from direct.task import Task
 from SCConstants import *
 from direct.interval.IntervalGlobal import *
 from SCObject import SCObject
-from direct.showbase.PythonUtil import makeTuple
+from toontown.toonbase.ToonPythonUtil import makeTuple
 import types
 
 class SCMenu(SCObject, NodePath):

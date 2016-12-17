@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 CollectionTime = 30
 BarrelRoomIntroTimeout = 12.0
 RewardUiTime = 5.0

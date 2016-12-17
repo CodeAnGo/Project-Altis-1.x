@@ -1,8 +1,9 @@
 import random
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.FunctionInterval import Wait, Func
 from direct.interval.MetaInterval import Sequence, Parallel
-from direct.showbase.PythonUtil import lerp, Enum
+from toontown.toonbase.ToonPythonUtil import lerp, Enum
 from direct.fsm import FSM
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals

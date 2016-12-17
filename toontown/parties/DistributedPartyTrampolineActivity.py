@@ -301,9 +301,9 @@ class DistributedPartyTrampolineActivity(DistributedPartyActivity):
         if self.toon != None and self.toon.doId == base.localAvatar.doId:
             base.setCellsAvailable(base.bottomCells, True)
             self.accept(base.MOVE_LEFT, self.onLeft)
-            self.accept('arrow_left-up', self.onLeftUp)
+            self.accept(base.MOVE_LEFT + '-up', self.onLeftUp)
             self.accept(base.MOVE_RIGHT, self.onRight)
-            self.accept('arrow_right-up', self.onRightUp)
+            self.accept(base.MOVE_RIGHT + '-up', self.onRightUp)
             self.beginRoundInterval = Sequence(Func(self._showFlashMessage, TTLocalizer.PartyTrampolineReady), Wait(1.2), Func(self.flashMessage, TTLocalizer.PartyTrampolineGo), Func(self.beginRound))
             self.beginRoundInterval.start()
         return

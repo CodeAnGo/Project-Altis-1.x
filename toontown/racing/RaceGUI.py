@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.distributed.PythonUtil import clampScalar
 from direct.distributed.ClockDelta import *
 from direct.distributed import DistributedObject

@@ -7,7 +7,7 @@ from direct.task.Task import Task
 from direct.interval.FunctionInterval import Wait
 from direct.interval.IntervalGlobal import Func, LerpFunc, LerpPosInterval, LerpHprInterval, LerpFunctionInterval
 from direct.interval.MetaInterval import Sequence, Parallel
-from direct.showbase.PythonUtil import bound as clamp
+from toontown.toonbase.ToonPythonUtil import bound as clamp
 from direct.distributed.ClockDelta import globalClockDelta
 from otp.otpbase import OTPGlobals
 from toontown.minigame.OrthoDrive import OrthoDrive

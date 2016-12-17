@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.dna.DNAParser import DNAGroup, DNAVisGroup
 from toontown.hood import HoodAI
 from toontown.hood import ZoneUtil

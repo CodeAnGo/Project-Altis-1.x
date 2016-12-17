@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase.ToonBaseGlobal import *
 from toontown.toonbase import ToontownGlobals
 from direct.distributed.ClockDelta import *
@@ -16,7 +17,8 @@ from toontown.effects import DustCloud
 from toontown.minigame import CannonGameGlobals
 import CannonGlobals
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import TTLocalizer
 from direct.distributed import DistributedObject
 from toontown.effects import Wake

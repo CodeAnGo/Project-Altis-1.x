@@ -1,5 +1,6 @@
 #from panda3d.core import * # For some reason the ai and ud have a problem with this (ImportError: DLL load failed: %1 is not a valid Win32 application.)
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import __builtin__
 
 import argparse

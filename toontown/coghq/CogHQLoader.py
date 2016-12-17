@@ -8,7 +8,8 @@ from toontown.hood import ZoneUtil
 from toontown.town import TownBattleOLD
 from toontown.town import TownBattleNEW
 from toontown.suit import Suit
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 
 class CogHQLoader(StateData.StateData):
     notify = DirectNotifyGlobal.directNotify.newCategory('CogHQLoader')

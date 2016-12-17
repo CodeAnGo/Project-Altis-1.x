@@ -1,6 +1,6 @@
 import EditMgrBase
 if __dev__:
-    from direct.showbase.PythonUtil import list2dict
+    from toontown.toonbase.ToonPythonUtil import list2dict
     import EditorGlobals
 
 class EditMgrAI(EditMgrBase.EditMgrBase):

@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from DistributedNPCToonBaseAI import *
 import NPCToons
 from direct.task.Task import Task

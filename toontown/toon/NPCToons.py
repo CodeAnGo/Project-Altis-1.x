@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from otp.nametag.NametagGroup import *
 from toontown.toonbase import ToontownGlobals
 import random

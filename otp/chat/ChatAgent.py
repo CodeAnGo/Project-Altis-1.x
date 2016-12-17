@@ -1,5 +1,6 @@
 from direct.distributed.DistributedObjectGlobal import DistributedObjectGlobal
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from otp.otpbase import OTPGlobals
 from otp.ai.MagicWordGlobal import *
 

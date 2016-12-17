@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from DistributedNPCToonBaseAI import *
 from toontown.fishing import FishGlobals
 from toontown.toonbase import TTLocalizer

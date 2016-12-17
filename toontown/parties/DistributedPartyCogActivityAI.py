@@ -1,5 +1,5 @@
 from direct.directnotify import DirectNotifyGlobal
-from direct.showbase.PythonUtil import bound
+from toontown.toonbase.ToonPythonUtil import bound
 from toontown.parties.DistributedPartyTeamActivityAI import DistributedPartyTeamActivityAI
 from toontown.toonbase import TTLocalizer
 from toontown.parties import PartyGlobals

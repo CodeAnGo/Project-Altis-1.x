@@ -1,6 +1,7 @@
 import time
 import string
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from otp.nametag.Nametag import Nametag
 from direct.distributed import DistributedNode
 from direct.actor.DistributedActor import DistributedActor

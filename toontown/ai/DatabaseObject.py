@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from ToontownAIMsgTypes import *
 from direct.directnotify.DirectNotifyGlobal import *
 from toontown.toon import DistributedToonAI

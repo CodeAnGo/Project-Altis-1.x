@@ -1,4 +1,4 @@
-from direct.showbase.PythonUtil import randFloat, normalDistrib, Enum
+from toontown.toonbase.ToonPythonUtil import randFloat, normalDistrib, Enum
 from toontown.distributed.PythonUtil import clampScalar
 from toontown.toonbase import TTLocalizer, ToontownGlobals
 import random, copy

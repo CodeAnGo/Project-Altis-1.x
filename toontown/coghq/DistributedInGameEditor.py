@@ -1,6 +1,7 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
-from direct.showbase.PythonUtil import lineInfo, Functor
+from toontown.toonbase.ToonPythonUtil import lineInfo, Functor
 from direct.directnotify import DirectNotifyGlobal
 from direct.distributed import DistributedObject
 from otp.level import Level

@@ -6,7 +6,7 @@ from direct.tkwidgets import Slider, Floater
 from tkSimpleDialog import askstring
 from tkMessageBox import showwarning, askyesno
 from Tkinter import *
-from direct.showbase.PythonUtil import Functor, list2dict
+from toontown.toonbase.ToonPythonUtil import Functor, list2dict
 from direct.gui.DirectGui import DGG
 import tkFileDialog
 from direct.showbase import DirectObject

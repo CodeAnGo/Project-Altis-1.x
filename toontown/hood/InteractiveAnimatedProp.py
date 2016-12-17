@@ -2,7 +2,7 @@ from pandac.PandaModules import TextNode, Vec3
 from direct.actor import Actor
 from direct.fsm import FSM
 from direct.interval.IntervalGlobal import Sequence, ActorInterval, Wait, Func, SoundInterval, Parallel
-from direct.showbase.PythonUtil import weightedChoice
+from toontown.toonbase.ToonPythonUtil import weightedChoice
 from toontown.toonbase import ToontownGlobals
 import GenericAnimatedProp
 import math, random

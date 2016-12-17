@@ -12,7 +12,7 @@ from direct.interval.MetaInterval import Sequence
 from direct.interval.MetaInterval import Parallel
 from direct.interval.FunctionInterval import Func
 from direct.showutil.Rope import Rope
-from direct.showbase.PythonUtil import fitDestAngle2Src
+from toontown.toonbase.ToonPythonUtil import fitDestAngle2Src
 from direct.fsm.StatePush import StateVar, FunctionCall
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals

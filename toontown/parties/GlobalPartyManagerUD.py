@@ -4,7 +4,8 @@ from direct.directnotify.DirectNotifyGlobal import directNotify
 from direct.task import Task
 from PartyGlobals import *
 from datetime import datetime, timedelta
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 
 class GlobalPartyManagerUD(DistributedObjectGlobalUD):
     notify = directNotify.newCategory('GlobalPartyManagerUD')

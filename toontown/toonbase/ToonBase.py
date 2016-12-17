@@ -1,7 +1,7 @@
 from otp.otpbase import OTPBase
 from otp.otpbase import OTPLauncherGlobals
 from otp.otpbase import OTPGlobals
-from direct.showbase.PythonUtil import * # We should remove all wild imports unless EVERYTHING will be used. It will help the fps alot
+from toontown.toonbase.ToonPythonUtil import * # We should remove all wild imports unless EVERYTHING will be used. It will help the fps alot
 import ToontownGlobals
 from direct.directnotify import DirectNotifyGlobal
 import ToontownLoader

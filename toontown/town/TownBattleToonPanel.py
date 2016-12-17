@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import ToontownGlobals
 from toontown.toonbase.ToontownBattleGlobals import *
 from direct.directnotify import DirectNotifyGlobal
@@ -6,7 +7,8 @@ import string
 from toontown.toon import LaffMeter
 from toontown.battle import BattleBase
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase import TTLocalizer
 
 class TownBattleToonPanel(DirectFrame):

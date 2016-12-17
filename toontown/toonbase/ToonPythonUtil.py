@@ -59,7 +59,8 @@ import bisect
 __report_indent = 3
 
 from direct.directutil import Verify
-from panda3d.core import ConfigVariableBool
+from panda3d.core import *
+from panda3d.direct import *
 
 ScalarTypes = (types.FloatType, types.IntType, types.LongType)
 
@@ -2455,7 +2456,7 @@ dtoolSuperBase = None
 
 def _getDtoolSuperBase(): 
     global dtoolSuperBase
-    from pandac.PandaModules import PandaNode
+    from panda3d.core import PandaNode
     dtoolSuperBase = PandaNode('').__class__.__bases__[0].__bases__[0].__bases__[0]
     assert repr(dtoolSuperBase) == "<type 'libdtoolconfig.DTOOL_SUPER_BASE111'>" \
         or repr(dtoolSuperBase) == "<type 'libdtoolconfig.DTOOL_SUPPER_BASE111'>" \
@@ -3281,7 +3282,7 @@ class PStatScope:
     def getCollector(self):
         label = str(self)
         if label not in self.collectors:
-            from pandac.PandaModules import PStatCollector
+            from panda3d.core import PStatCollector
             self.collectors[label] = PStatCollector(label)
             pass
         # print '  ',self.collectors[label]
@@ -3914,7 +3915,6 @@ class HierarchyException(Exception):
 # __dev__ is not defined at import time, call this after it's defined
 def recordFunctorCreationStacks():
     global Functor
-    from pandac.PandaModules import getConfigShowbase
     config = getConfigShowbase()
     # off by default, very slow
     if __dev__ and config.GetBool('record-functor-creation-stacks', 0):
@@ -4080,7 +4080,7 @@ packageMap = {
 #assuming . dereferncing for nice linking to imports
 def pandaBreak(dotpath, linenum, temporary = 0, cond = None):
     if __dev__:
-        from pandac.PandaModules import Filename
+        from panda3d.core import Filename
         if not globalPdb:
             setupPdb()
         dirs = dotpath.split(".")

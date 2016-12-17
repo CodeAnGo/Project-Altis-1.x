@@ -1,6 +1,6 @@
 from direct.directnotify import DirectNotifyGlobal
 from direct.task import Task
-from direct.showbase.PythonUtil import lerp, average
+from toontown.toonbase.ToonPythonUtil import lerp, average
 from toontown.distributed.PythonUtil import clampScalar
 from toontown.toonbase import TTLocalizer
 import random, time, weakref

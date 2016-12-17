@@ -1,4 +1,5 @@
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from toontown.toonbase.ToontownGlobals import *
 from direct.distributed.ClockDelta import *
 from direct.interval.IntervalGlobal import *
@@ -222,3 +223,7 @@ class DistributedMintRoom(DistributedLevel.DistributedLevel, MintRoomBase.MintRo
 
     def __repr__(self):
         return str(self)
+
+    def reportModelSpecSyncError(self, msg): #we need this cause the unit spec and model Num do match to see what i mean un hash next line
+        self.notify.info('%s\n\nyour spec does not match the level model\nuse SpecUtil.updateSpec, then restart your AI and client' % msg)
+        pass

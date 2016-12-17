@@ -6,7 +6,7 @@ import SuitBattleGlobals
 import BattleExperienceAI
 from toontown.toon import NPCToons
 from toontown.pets import PetTricks, DistributedPetProxyAI
-from direct.showbase.PythonUtil import lerp
+from toontown.toonbase.ToonPythonUtil import lerp
 from otp.ai.MagicWordGlobal import *
 
 battleSkip = 0

@@ -1,5 +1,6 @@
 from otp.level.BasicEntities import DistributedNodePathEntity
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from direct.interval.IntervalGlobal import *
 from toontown.toonbase.ToontownGlobals import *
 import random

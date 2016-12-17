@@ -1,5 +1,5 @@
 import math
-from direct.showbase.PythonUtil import bound, lerp
+from toontown.toonbase.ToonPythonUtil import bound, lerp
 from direct.task.Task import Task
 from direct.interval.MetaInterval import Sequence, Parallel
 from direct.interval.FunctionInterval import Func, Wait

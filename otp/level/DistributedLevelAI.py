@@ -4,7 +4,7 @@ from direct.distributed import DistributedObjectAI
 import Level
 from direct.directnotify import DirectNotifyGlobal
 import EntityCreatorAI
-from direct.showbase.PythonUtil import Functor, weightedChoice
+from toontown.toonbase.ToonPythonUtil import Functor, weightedChoice
 if __dev__:
     from EditMgrAI import EditMgrAI
 

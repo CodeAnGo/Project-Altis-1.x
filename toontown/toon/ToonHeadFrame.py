@@ -1,5 +1,6 @@
 from direct.gui.DirectGui import *
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 import ToonHead
 from toontown.distributed import DelayDelete
 from toontown.toonbase import ToontownGlobals

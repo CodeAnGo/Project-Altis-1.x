@@ -1,5 +1,6 @@
 from direct.task.Task import Task
-from pandac.PandaModules import *
+from panda3d.core import *
+from panda3d.direct import *
 from DistributedNPCToonBaseAI import *
 from toontown.quest import Quests
 

@@ -18,13 +18,17 @@ class DistributedRainManagerAI(DistributedWeatherMGRAI):
     
     def __init__(self, air):
         DistributedWeatherMGRAI.__init__(self, air)
+        self.wantSnow = True
 
     def start(self, alwaysRain = False):
         DistributedWeatherMGRAI.start(self)
                 
 
-        if alwaysRain:
+        if alwaysRain and not self.wantSnow:
             self.b_setState('Rain')
+            
+        elif self.wantSnow:
+            self.b_setState('Snow')
         else:
             Sequence(
                 Func(self.b_setState, 'Sunny'),

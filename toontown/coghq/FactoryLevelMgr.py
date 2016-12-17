@@ -1,6 +1,6 @@
 from otp.level import LevelMgr
 import FactoryUtil
-from direct.showbase.PythonUtil import Functor
+from toontown.toonbase.ToonPythonUtil import Functor
 from toontown.toonbase import ToontownGlobals
 
 class FactoryLevelMgr(LevelMgr.LevelMgr):
