@@ -885,7 +885,7 @@ group "toontownCentral" [
   ]
   prop "toontown_central_DNARoot" [
    code [ "toontown_central" ]
-   pos [ 0.00012207 -1.52588e-005 0 ]
+   pos [ 0 0 0 ]
    nhpr [ -90 0 -0 ]
   ]
   prop "prop_tree_large_ur_DNARoot" [
@@ -965,7 +965,7 @@ group "toontownCentral" [
   ]
   prop "prop_tree_fat_ur_DNARoot" [
    code [ "prop_tree_fat_ur" ]
-   pos [ 162.717 78.6741 2.49998 ]
+   pos [ 175 -15 0 ]
    nhpr [ 135 0 -0 ]
   ]
   prop "prop_tree_fat_ur_DNARoot" [
@@ -980,12 +980,7 @@ group "toontownCentral" [
   ]
   prop "prop_tree_fat_ur_DNARoot" [
    code [ "prop_tree_fat_ur" ]
-   pos [ 163.397 64.4495 2.5 ]
-   nhpr [ 135 0 -0 ]
-  ]
-  prop "prop_tree_fat_ur_DNARoot" [
-   code [ "prop_tree_fat_ur" ]
-   pos [ 166.09 4.81043 2.5 ]
+   pos [ 165 5 5 ]
    nhpr [ 135 0 -0 ]
   ]
   prop "prop_big_planter_DNARoot" [
@@ -1094,7 +1089,7 @@ group "toontownCentral" [
   ]
   prop "prop_toontown_central_fountain_DNARoot" [
    code [ "prop_toontown_central_fountain" ]
-   pos [ 7 100 3 ]
+   pos [ 50 -5 5 ]
    nhpr [ 15 0 -0 ]
   ]
   prop "prop_mickey_on_horse_DNARoot" [
@@ -1119,8 +1114,8 @@ group "toontownCentral" [
   ]
   prop "prop_tree_fat_ul_DNARoot" [
    code [ "prop_tree_fat_ul" ]
-   pos [ 151.37 148.717 2.49996 ]
-   nhpr [ -33 0 -0 ]
+   pos [ 150 155 0 ]
+   nhpr [ -30 0 -0 ]
   ]
   prop "prop_post_three_light_DNARoot" [
    code [ "prop_post_three_light" ]
@@ -1317,8 +1312,8 @@ group "toontownCentral" [
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 135.053 163.431 0 ]
-  nhpr [ -60 0 0 ]
+  pos [ 120 175 0 ]
+  nhpr [ -60 0 -0 ]
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
@@ -1327,23 +1322,23 @@ group "toontownCentral" [
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 141.053 136.431 0 ]
-  nhpr [ -60 0 0 ]
+  pos [ 140 165 0 ]
+  nhpr [ -60 0 -0 ]
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 151.053 136.431 0 ]
-  nhpr [ -60 0 0 ]
+  pos [ 120 160 0 ]
+  nhpr [ -60 0 -0 ]
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 156.053 121.431 0 ]
-  nhpr [ -60 0 0 ]
+  pos [ 155 135 0 ]
+  nhpr [ -60 0 -0 ]
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 161.053 101.431 0 ]
-  nhpr [ -60 0 0 ]
+  pos [ 140 50 0 ]
+  nhpr [ -60 0 -0 ]
  ]
  flat_building "tb0:random_DNARoot" [
   pos [ -4.93923 137.416 0 ]
@@ -1538,8 +1533,8 @@ group "toontownCentral" [
   ]
  ]
  flat_building "tb0:random_DNARoot" [
-  pos [ 145.161 11.3026 4 ]
-  nhpr [ 165 0 0 ]
+  pos [ 145 10 5 ]
+  nhpr [ 165 0 -0 ]
   width [ 25 ]
   wall [
    height [ 10 ]
