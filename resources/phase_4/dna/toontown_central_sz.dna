@@ -885,7 +885,7 @@ group "toontownCentral" [
   ]
   prop "toontown_central_DNARoot" [
    code [ "toontown_central" ]
-   pos [ 0 0 0 ]
+   pos [ -0.34675 0.61261 0 ]
    nhpr [ -90 0 -0 ]
   ]
   prop "prop_tree_large_ur_DNARoot" [
@@ -1112,11 +1112,6 @@ group "toontownCentral" [
    pos [ 74.3876 164.631 3 ]
    nhpr [ -95 0 -0 ]
   ]
-  prop "prop_tree_fat_ul_DNARoot" [
-   code [ "prop_tree_fat_ul" ]
-   pos [ 150 155 0 ]
-   nhpr [ -30 0 -0 ]
-  ]
   prop "prop_post_three_light_DNARoot" [
    code [ "prop_post_three_light" ]
    pos [ 105.609 -49.8199 4.00008 ]
@@ -1322,17 +1317,7 @@ group "toontownCentral" [
  ]
  prop "prop_tree_large_ur_DNARoot" [
   code [ "prop_tree_large_ur" ]
-  pos [ 140 165 0 ]
-  nhpr [ -60 0 -0 ]
- ]
- prop "prop_tree_large_ur_DNARoot" [
-  code [ "prop_tree_large_ur" ]
   pos [ 120 160 0 ]
-  nhpr [ -60 0 -0 ]
- ]
- prop "prop_tree_large_ur_DNARoot" [
-  code [ "prop_tree_large_ur" ]
-  pos [ 155 135 0 ]
   nhpr [ -60 0 -0 ]
  ]
  prop "prop_tree_large_ur_DNARoot" [
@@ -1668,5 +1653,15 @@ group "toontownCentral" [
   code [ "prop_tree_small_ur" ]
   pos [ 157.776 -108.833 3.00001 ]
   nhpr [ -15 0 -0 ]
+ ]
+ prop "prop_safe_zone_tunnel_DNARoot" [
+  code [ "prop_safe_zone_tunnel" ]
+  pos [ 230 100 -6.2 ]
+  nhpr [ 120 0 -0 ]
+ ]
+ prop "prop_construction_sign_DNARoot" [
+  code [ "prop_construction_sign" ]
+  pos [ 117 103.5 2.5 ]
+  nhpr [ -60 0 0 ]
  ]
 ]
