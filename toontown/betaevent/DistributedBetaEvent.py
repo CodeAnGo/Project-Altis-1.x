@@ -6,7 +6,7 @@ from direct.interval.IntervalGlobal import *
 from toontown.toon import Toon, ToonDNA
 from direct.actor.Actor import Actor
 from otp.avatar import Avatar
-from toontown.chat.ChatGlobals import *
+from otp.nametag.NametagConstants import *
 from toontown.nametag.NametagGroup import *
 from toontown.suit import DistributedSuitBase, SuitDNA
 from toontown.toon import NPCToons
@@ -20,6 +20,12 @@ class DistributedBetaEvent(DistributedEvent):
         DistributedEvent.__init__(self, cr)
         self.cr = cr
         self.spark = loader.loadSfx('phase_11/audio/sfx/LB_sparks_1.ogg') # i think this could be used somewhere
+        
+        # The toon version of Looney Labs - Before it gets taken over
+        self.toonLabs = None
+        
+        # The cog version of Looney Labs - After it gets taken over
+        self.cogLabs = None
 
         # Create flippy
         self.flippy = Toon.Toon()
@@ -47,9 +53,32 @@ class DistributedBetaEvent(DistributedEvent):
         self.flippy.delete()
             
     def enterPreEvent(self, timestamp):
-        pass
+        # If for some reason the cog lab is loaded, unload
+        if self.cogLabs:
+            self.cogLabs.destroy()
+            self.cogLabs = None
+        
+        # Load the toon lab if its not already loaded incase a new player enters
+        if not self.toonLabs:
+            self.loadToonLab()
         
     def exitPreEvent(self, timestamp):
+        pass
+    
+    def enterAnnouncement(self, timestamp):
+        """
+        Announcing looney labs's renovation
+        """
+        # If for some reason the cog lab is loaded, unload
+        if self.cogLabs:
+            self.cogLabs.destroy()
+            self.cogLabs = None
+        
+        # Load the toon lab if its not already loaded incase a new player enters
+        if not self.toonLabs:
+            self.loadToonLab()
+        
+    def exitAnnouncement(self, timestamp):
         pass
 
     def enterCogTv(self, timestamp):
@@ -60,9 +89,52 @@ class DistributedBetaEvent(DistributedEvent):
         self.cogTv = CogTV.CogTV
         self.cogTv.setScreen("Introduction")
         '''
+        pass
     
     def exitCogTv(self, timestamp):
         pass
     
+    def enterCogTakeover(self, timestamp):
+        """
+        Cogs take over looney labs
+        - Fade screen to black
+        - Delete looney labs model and replace it with the Cog version of looney labs
+        - AI will create suit planner
+        - Screen unfades
+        """
+        # Unload the toon labs if its loaded
+        if self.toonLabs:
+            self.toonLabs.destroy()
+            self.toonLabs = None
+        
+        # Load the cog lab if its not already loaded incase a new player enters
+        if not self.cogLabs:
+            self.loadCogLab()
+    
+    def exitCogTakeover(self, timestamp):
+        pass
+    
     def toonTalk(self, phrase, toon):
         toon.setChatAbsolute(phrase, CFSpeech|CFTimeout)
+        
+    def loadToonLab(self):
+        # After the model is loaded, spawn it in
+        def spawnToonLab(self, *args):
+            self.toonLabs = args[0]
+            self.toonLabs.reparentTo(render)
+        
+        # Asynchronously load the model to not lag the game
+        #loader.loadModel('phase_14/models/looneylabs/looney_labs_toon', callback = spawnToonLab) # TODO: Models
+        pass
+        
+    def loadCogLab(self):
+        # After the model is loaded, spawn it in
+        def spawnCogLab(self, *args):
+            self.cogLabs = args[0]
+            self.cogLabs.reparentTo(render)
+        
+        # Asynchronously load the model to not lag the game
+        #loader.loadModel('phase_14/models/looneylabs/looney_labs_cog', callback = spawnCogLab) # TODO: Models
+        pass
+        
+        

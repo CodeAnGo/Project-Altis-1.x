@@ -20,11 +20,16 @@ class DistributedBetaEventAI(DistributedEventAI):
                 player = simbase.air.doId2do.get(doId)
                 player.d_setSystemMessage(0, text)
 
-
     def enterPreEvent(self):
         pass
 
     def exitPreEvent(self):
+        pass
+    
+    def enterAnnouncement(self):
+        pass
+    
+    def exitAnnouncement(self):
         pass
         
     def enterCogTv(self):
@@ -32,3 +37,10 @@ class DistributedBetaEventAI(DistributedEventAI):
         
     def exitCogTv(self):
         pass
+    
+    def enterCogTakeover(self):
+        pass
+    
+    def exitCogTakeover(self):
+        pass
+    
