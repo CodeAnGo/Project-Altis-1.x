@@ -7,7 +7,7 @@ class DistributedPartyActivityAI(DistributedObjectAI):
 
     def __init__(self, air, parent, activityTuple):
         DistributedObjectAI.__init__(self, air)
-        self.parent = parent
+        self._parent = parent
         x, y, h = activityTuple[1:] # Ignore activity ID
         self.x = PartyUtils.convertDistanceFromPartyGrid(x, 0)
         self.y = PartyUtils.convertDistanceFromPartyGrid(y, 1)
@@ -24,7 +24,7 @@ class DistributedPartyActivityAI(DistributedObjectAI):
         return self.h
 
     def getPartyDoId(self):
-        return self.parent
+        return self._parent
 
     def updateToonsPlaying(self):
         self.sendUpdate('setToonsPlaying', [self.toonsPlaying])

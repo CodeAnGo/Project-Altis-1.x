@@ -757,7 +757,7 @@ class InGameEditor(AppShell):
         try:
             value = eval(newText)
         except:
-            showwarning('ERROR', 'that is not a valid Python object', parent=self.parent)
+            showwarning('ERROR', 'that is not a valid Python object', parent=self._parent)
             return
 
         self.level.setAttribEdit(entId, attribName, value)
@@ -802,7 +802,7 @@ class InGameEditor(AppShell):
         messenger.send(self.requestSaveEvent)
 
     def handleSaveAs(self):
-        filename = tkFileDialog.asksaveasfilename(parent=self.parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
+        filename = tkFileDialog.asksaveasfilename(parent=self._parent, defaultextension='.py', filetypes=[('Python Source Files', '.py'), ('All Files', '*')])
         if len(filename) > 0:
             messenger.send(self.saveAsEvent, [filename])
 
@@ -834,10 +834,10 @@ class InGameEditor(AppShell):
         self.showWarning('%s\nThis is not yet implemented.' % what, 'TODO')
 
     def showWarning(self, msg, title = 'Warning'):
-        showwarning(title, msg, parent=self.parent)
+        showwarning(title, msg, parent=self._parent)
 
     def askYesNo(self, msg, title = 'Query'):
-        return askyesno(title, msg, parent=self.parent)
+        return askyesno(title, msg, parent=self._parent)
 
     def popupLevelDialog(self):
         data = askstring('Input Level Data', 'Level Data:', parent=self)

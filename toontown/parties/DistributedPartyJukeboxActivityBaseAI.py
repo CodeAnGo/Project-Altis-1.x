@@ -110,7 +110,7 @@ class DistributedPartyJukeboxActivityBaseAI(DistributedPartyActivityAI):
         avId = self.air.getAvatarIdFromSender()
         if avId != self.currentToon:
             self.air.writeServerEvent('suspicious', avId=avId, issue='Toon tried to set song without using the jukebox!')
-        host = self.air.doId2do[self.parent].hostId
+        host = self.air.doId2do[self._parent].hostId
         if avId != host:
             self.air.writeServerEvent('suspicious', avId=avId, issue='Toon tried to move the host\'s song to the top!')
             return

@@ -44,6 +44,7 @@ settingsFilename = ConfigVariableString(
 notify.info('Reading %s...' % settingsFilename)
 
 __builtin__.settings = Settings(settingsFilename)
+__builtin__.NO_FADE_SORT_INDEX = 2000
 if 'res' not in settings:
     settings['res'] = (1280, 720)
 if 'fullscreen' not in settings:

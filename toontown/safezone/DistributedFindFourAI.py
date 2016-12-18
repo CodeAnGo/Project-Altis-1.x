@@ -65,7 +65,7 @@ class DistributedFindFourAI(DistributedNodeAI):
                 0,
                 0,
                 0]]
-        self.parent = self.air.doId2do[parent]
+        self._parent = self.air.doId2do[parent]
         self.parentDo = parent
         self.wantStart = []
         self.playersPlaying = []
@@ -91,7 +91,7 @@ class DistributedFindFourAI(DistributedNodeAI):
             'setH',
             'setP',
             'setR'])
-        self.parent.setCheckersZoneId(self.zoneId)
+        self._parent.setCheckersZoneId(self.zoneId)
         self.timerStart = None
         self.fsm = ClassicFSM.ClassicFSM('Checkers', [
             State.State('waitingToBegin', self.enterWaitingToBegin, self.exitWaitingToBegin, [
@@ -103,14 +103,14 @@ class DistributedFindFourAI(DistributedNodeAI):
         self.fsm.enterInitialState()
 
     def announceGenerate(self):
-        self.parent.setGameDoId(self.doId)
+        self._parent.setGameDoId(self.doId)
 
     def getTableDoId(self):
         return self.parentDo
 
     def delete(self):
         self.fsm.requestFinalState()
-        self.parent = None
+        self._parent = None
         self.parentDo = None
         del self.board
         del self.fsm
@@ -122,8 +122,8 @@ class DistributedFindFourAI(DistributedNodeAI):
             self.timerEnd = 0
         elif self.playersSitting == 2:
             self.timerEnd = globalClock.getRealTime() + 20
-            self.parent.isAccepting = False
-            self.parent.sendUpdate('setIsPlaying', [
+            self._parent.isAccepting = False
+            self._parent.sendUpdate('setIsPlaying', [
                 1])
         elif self.playersSitting > 2:
             pass
@@ -135,8 +135,8 @@ class DistributedFindFourAI(DistributedNodeAI):
         self.playersSitting -= 1
         if self.playersSitting < 2 and self.fsm.getCurrentState().getName() == 'waitingToBegin':
             self.timerEnd = 0
-            self.parent.isAccepting = True
-            self.parent.sendUpdate('setIsPlaying', [
+            self._parent.isAccepting = True
+            self._parent.sendUpdate('setIsPlaying', [
                 0])
 
         if self.playersSitting > 2 and self.fsm.getCurrentState().getName() == 'waitingToBegin':
@@ -185,7 +185,7 @@ class DistributedFindFourAI(DistributedNodeAI):
         self.playersTurn = 1
         self.playerNum = 1
         self.fsm.request('waitingToBegin')
-        self.parent.isAccepting = True
+        self._parent.isAccepting = True
 
     def requestWin(self, pieceNum):
         avId = self.air.getAvatarIdFromSender()
@@ -198,13 +198,13 @@ class DistributedFindFourAI(DistributedNodeAI):
                 y,
                 self.winDirection,
                 playerNum])
-            winnersSequence = Sequence(Wait(5.0), Func(self.fsm.request, 'gameOver'), Func(self.parent.announceWinner, 'Find Four', avId))
+            winnersSequence = Sequence(Wait(5.0), Func(self.fsm.request, 'gameOver'), Func(self._parent.announceWinner, 'Find Four', avId))
             winnersSequence.start()
         else:
             self.sendUpdateToAvatarId(avId, 'illegalMove', [])
 
     def distributeLaffPoints(self):
-        for x in self.parent.seats:
+        for x in self._parent.seats:
             if x != None:
                 av = self.air.doId2do.get(x)
                 av.toonUp(self.winLaffPoints)
@@ -212,13 +212,13 @@ class DistributedFindFourAI(DistributedNodeAI):
 
     def enterWaitingToBegin(self):
         self.setGameCountdownTime()
-        self.parent.isAccepting = True
+        self._parent.isAccepting = True
 
     def exitWaitingToBegin(self):
         self.turnEnd = 0
 
     def enterPlaying(self):
-        self.parent.isAccepting = False
+        self._parent.isAccepting = False
         for x in self.playersGamePos:
             if x != None:
                 self.playersTurn = self.playersGamePos.index(x)
@@ -236,7 +236,7 @@ class DistributedFindFourAI(DistributedNodeAI):
     def enterGameOver(self):
         self.timerEnd = 0
         isAccepting = True
-        self.parent.handleGameOver()
+        self._parent.handleGameOver()
         self.playersObserving = []
         self.playersTurn = 1
         self.playerNum = 1
@@ -245,7 +245,7 @@ class DistributedFindFourAI(DistributedNodeAI):
         self.playersGamePos = [
             None,
             None]
-        self.parent.isAccepting = True
+        self._parent.isAccepting = True
         self.fsm.request('waitingToBegin')
 
     def exitGameOver(self):
@@ -257,14 +257,14 @@ class DistributedFindFourAI(DistributedNodeAI):
             self.wantStart.append(avId)
 
         numPlayers = 0
-        for x in self.parent.seats:
+        for x in self._parent.seats:
             if x != None:
                 numPlayers = numPlayers + 1
                 continue
 
         if len(self.wantStart) == numPlayers and numPlayers >= 2:
             self.d_gameStart(avId)
-            self.parent.sendIsPlaying()
+            self._parent.sendIsPlaying()
 
     def d_gameStart(self, avId):
         for x in self.playersObserving:
@@ -273,7 +273,7 @@ class DistributedFindFourAI(DistributedNodeAI):
 
         zz = 0
         numPlayers = 0
-        for x in self.parent.seats:
+        for x in self._parent.seats:
             if x != None:
                 numPlayers += 1
                 self.playersPlaying.append(x)
@@ -291,7 +291,7 @@ class DistributedFindFourAI(DistributedNodeAI):
 
         self.wantStart = []
         self.fsm.request('playing')
-        self.parent.getTableState()
+        self._parent.getTableState()
 
     def d_sendTurn(self, playersTurn):
         self.sendUpdate('sendTurn', [
