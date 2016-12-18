@@ -124,7 +124,7 @@ class DistributedBetaEvent(DistributedEvent):
             self.toonLabs.reparentTo(render)
         
         # Asynchronously load the model to not lag the game
-        #loader.loadModel('phase_14/models/looneylabs/looney_labs_toon', callback = spawnToonLab) # TODO: Models
+        #asyncloader.loadModel('phase_14/models/looneylabs/looney_labs_toon', callback = spawnToonLab) # TODO: Models
         pass
         
     def loadCogLab(self):
@@ -134,7 +134,7 @@ class DistributedBetaEvent(DistributedEvent):
             self.cogLabs.reparentTo(render)
         
         # Asynchronously load the model to not lag the game
-        #loader.loadModel('phase_14/models/looneylabs/looney_labs_cog', callback = spawnCogLab) # TODO: Models
+        #asyncloader.loadModel('phase_14/models/looneylabs/looney_labs_cog', callback = spawnCogLab) # TODO: Models
         pass
         
         

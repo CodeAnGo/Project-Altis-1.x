@@ -102,7 +102,7 @@ class PlayGame(StateData.StateData):
          State.State('TutorialHood', self.enterTutorialHood, self.exitTutorialHood, ['quietZone']),
          State.State('EstateHood', self.enterEstateHood, self.exitEstateHood, ['quietZone']),
          State.State('PartyHood', self.enterPartyHood, self.exitPartyHood, ['quietZone']),
-         State.State('BoardbotHQ', self.enterBoardbotHQ, self.exitBoardbotHq, ['quietZone'])], 'start', 'start')
+         State.State('BoardbotHQ', self.enterBoardbotHQ, self.exitBoardbotHQ, ['quietZone'])], 'start', 'start')
         self.fsm.enterInitialState()
         self.parentFSM = parentFSM
         self.parentFSM.getStateNamed('playGame').addChild(self.fsm)

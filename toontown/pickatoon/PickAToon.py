@@ -76,10 +76,8 @@ class PickAToon:
         self.quitButton.show()
         self.deleteButton.show()
         self.patNode.unstash()
-
         self.checkPlayButton()
         self.updateFunc()
-        self.setButtonNames()
                 
     def exit(self):
         base.cam.iPosHpr()
@@ -91,13 +89,15 @@ class PickAToon:
     def load(self):
         self.patNode = render.attachNewNode('patNode')
         self.patNode2d = aspect2d.attachNewNode('patNode2d')
-        gui = loader.loadModel('phase_3/models/gui/pick_a_toon_gui')
-        gui2 = loader.loadModel('phase_3/models/gui/quit_button')
-        newGui = loader.loadModel('phase_3/models/gui/tt_m_gui_pat_mainGui')
+        gui = asyncloader.loadModel('phase_3/models/gui/pick_a_toon_gui')
+        gui2 = asyncloader.loadModel('phase_3/models/gui/quit_button')
+        newGui = asyncloader.loadModel('phase_3/models/gui/tt_m_gui_pat_mainGui')
         
-        self.background = loader.loadModel('phase_3.5/models/modules/gagShop_interior')
-        self.background.reparentTo(render)
-        self.background.setPosHpr(-50, 0, 8.1, -90, 0, 0)
+        def spawnBackground(*args):
+            self.background = args[0]
+            self.background.reparentTo(render)
+            self.background.setPosHpr(-50, 0, 8.1, -90, 0, 0)
+        asyncloader.loadModel('phase_3.5/models/modules/gagShop_interior', callback = spawnBackground)
         for frame in render.findAllMatches('*/doorFrame*'):
             frame.removeNode()
         self.sky = loader.loadModel('phase_3.5/models/props/TT_sky')
@@ -139,44 +139,49 @@ class PickAToon:
         self.toon.reparentTo(self.patNode)
         self.toon.stopLookAroundNow()
         
-        self.pickAToonGui = loader.loadModel('phase_3/models/gui/tt_m_gui_pat_mainGui')
-        self.buttonBgs = []
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareRed'))
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareGreen'))
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squarePurple'))
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareBlue'))
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squarePink'))
-        self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareYellow'))
-        
-        self.toon1 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [0], image = self.buttonBgs[0])
-        self.toon1.reparentTo(self.patNode2d)
-        self.toon1.setPos(-1, 0, 0.5)
-        self.toon1.setScale(.5)
-        
-        self.toon2 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [1], image = self.buttonBgs[1])
-        self.toon2.reparentTo(self.patNode2d)
-        self.toon2.setPos(-.6, 0, 0.5)
-        self.toon2.setScale(.5)
-        
-        self.toon3 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [2], image = self.buttonBgs[2])
-        self.toon3.reparentTo(self.patNode2d)
-        self.toon3.setPos(-.2, 0, 0.5)
-        self.toon3.setScale(.5)
-        
-        self.toon4 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [3], image = self.buttonBgs[3])
-        self.toon4.reparentTo(self.patNode2d)
-        self.toon4.setPos(.2, 0, 0.5)
-        self.toon4.setScale(.5)
-        
-        self.toon5 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [4], image = self.buttonBgs[4])
-        self.toon5.reparentTo(self.patNode2d)
-        self.toon5.setPos(.6, 0, 0.5)
-        self.toon5.setScale(.5)
-        
-        self.toon6 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [5], image = self.buttonBgs[5])
-        self.toon6.reparentTo(self.patNode2d)
-        self.toon6.setPos(1, 0, 0.5)
-        self.toon6.setScale(.5)
+        def spawnToonButtons(*args):
+            self.pickAToonGui = args[0]
+            self.buttonBgs = []
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareRed'))
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareGreen'))
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squarePurple'))
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareBlue'))
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squarePink'))
+            self.buttonBgs.append(self.pickAToonGui.find('**/tt_t_gui_pat_squareYellow'))
+            
+            self.toon1 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [0], image = self.buttonBgs[0])
+            self.toon1.reparentTo(self.patNode2d)
+            self.toon1.setPos(-1, 0, 0.5)
+            self.toon1.setScale(.5)
+            
+            self.toon2 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [1], image = self.buttonBgs[1])
+            self.toon2.reparentTo(self.patNode2d)
+            self.toon2.setPos(-.6, 0, 0.5)
+            self.toon2.setScale(.5)
+            
+            self.toon3 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [2], image = self.buttonBgs[2])
+            self.toon3.reparentTo(self.patNode2d)
+            self.toon3.setPos(-.2, 0, 0.5)
+            self.toon3.setScale(.5)
+            
+            self.toon4 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [3], image = self.buttonBgs[3])
+            self.toon4.reparentTo(self.patNode2d)
+            self.toon4.setPos(.2, 0, 0.5)
+            self.toon4.setScale(.5)
+            
+            self.toon5 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [4], image = self.buttonBgs[4])
+            self.toon5.reparentTo(self.patNode2d)
+            self.toon5.setPos(.6, 0, 0.5)
+            self.toon5.setScale(.5)
+            
+            self.toon6 = DirectButton(text = ' ', relief = None, command=self.selectToon, extraArgs = [5], image = self.buttonBgs[5])
+            self.toon6.reparentTo(self.patNode2d)
+            self.toon6.setPos(1, 0, 0.5)
+            self.toon6.setScale(.5)
+            
+            self.setButtonNames()
+            
+        asyncloader.loadModel('phase_3/models/gui/tt_m_gui_pat_mainGui', callback = spawnToonButtons)
 
         # Delete Toon button
         trashcanGui = loader.loadModel('phase_3/models/gui/trashcan_gui.bam')

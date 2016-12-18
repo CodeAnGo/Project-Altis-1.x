@@ -5,6 +5,7 @@ from toontown.toonbase.ToonPythonUtil import * # We should remove all wild impor
 import ToontownGlobals
 from direct.directnotify import DirectNotifyGlobal
 import ToontownLoader
+import ToontownAsyncLoader
 from direct.gui import DirectGuiGlobals
 from direct.gui.DirectGui import *
 from direct.showbase.Transitions import Transitions
@@ -83,6 +84,10 @@ class ToonBase(OTPBase.OTPBase):
         oldLoader = self.loader
         self.loader = ToontownLoader.ToontownLoader(self)
         __builtins__['loader'] = self.loader
+        
+        self.asyncLoader = ToontownAsyncLoader.ToontownAsyncLoader(self)
+        __builtins__['asyncloader'] = self.asyncLoader
+        
         oldLoader.destroy()
         self.accept('PandaPaused', self.disableAllAudio)
         self.accept('PandaRestarted', self.enableAllAudio)

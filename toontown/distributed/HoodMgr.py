@@ -172,6 +172,9 @@ class HoodMgr(DirectObject.DirectObject):
             [88.2, -336.52, -68.4, -720.4, 0, 0],
             [232.77, -305.33, -68.4, -651, 0, 0],
             [-20.16, -345.76, -68.4, -777.98, 0, 0]
+        ),
+        ToontownGlobals.BossbotHQ: ( # TODO: Drop points!
+            [0, 0, 0, 0, 0, 0],
         )
     }
     hoodName2Id = {
@@ -188,7 +191,8 @@ class HoodMgr(DirectObject.DirectObject):
         'sellhq': ToontownGlobals.SellbotHQ,
         'cashhq': ToontownGlobals.CashbotHQ,
         'lawhq': ToontownGlobals.LawbotHQ,
-        'gz': ToontownGlobals.GolfZone
+        'gz': ToontownGlobals.GolfZone,
+        'boardhq': ToontownGlobals.BoardbotHQ
     }
     hoodId2Name = {
         ToontownGlobals.DonaldsDock: 'dd',
@@ -205,7 +209,8 @@ class HoodMgr(DirectObject.DirectObject):
         ToontownGlobals.SellbotHQ: 'sellhq',
         ToontownGlobals.CashbotHQ: 'cashhq',
         ToontownGlobals.LawbotHQ: 'lawhq',
-        ToontownGlobals.GolfZone: 'gz'
+        ToontownGlobals.GolfZone: 'gz',
+        ToontownGlobals.BoardbotHQ: 'boardhq'
     }
     DefaultDropPoint = [0] * 6
     dbgDropMode = 0
