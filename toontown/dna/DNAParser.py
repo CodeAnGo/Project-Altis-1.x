@@ -14,13 +14,15 @@ class DNABulkLoader:
 
 def loadDNABulk(dnaStorage, file):
     dnaLoader = DNALoader()
-    file = 'resources/' + file
+    if __dev__:
+        file = 'resources/' + file
     dnaLoader.loadDNAFile(dnaStorage, file)
 
 def loadDNAFile(dnaStorage, dnafile):
     print 'LoadFile: Reading DNA file...', dnafile
     dnaLoader = DNALoader()
-    dnafile = 'resources/' + dnafile
+    if __dev__:
+        dnafile = 'resources/' + dnafile
     node = dnaLoader.loadDNAFile(dnaStorage, dnafile)
     try:
         if node.node().getNumChildren() > 0:
@@ -30,7 +32,8 @@ def loadDNAFile(dnaStorage, dnafile):
 
 def loadDNAFileAI(dnaStorage, file):
     dnaLoader = DNALoader()
-    file = 'resources/' + file
+    if __dev__:
+        file = 'resources/' + file
     data = dnaLoader.loadDNAFileAI(dnaStorage, file)
     return data
     print 'Loading DNA File: ', file

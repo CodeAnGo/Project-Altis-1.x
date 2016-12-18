@@ -1,9 +1,9 @@
 import datetime
 import time
 from pandac.PandaModules import TextNode, Vec3, Vec4, PlaneNode, Plane, Point3
-from direct.gui.DirectGui import DirectFrame, DirectLabel, DirectButton, DirectScrolledList, DGG
+from toontown.pgui.DirectGui import DirectFrame, DirectLabel, DirectButton, DirectScrolledList, DGG
 from direct.directnotify import DirectNotifyGlobal
-from direct.gui import DirectGuiGlobals
+from toontown.pgui import DirectGuiGlobals
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals
 from toontown.parties.PartyInfo import PartyInfo
