@@ -45,6 +45,7 @@ notify.info('Reading %s...' % settingsFilename)
 
 __builtin__.settings = Settings(settingsFilename)
 __builtin__.NO_FADE_SORT_INDEX = 2000
+__builtin__.FADE_SORT_INDEX = 1000
 if 'res' not in settings:
     settings['res'] = (1280, 720)
 if 'fullscreen' not in settings:
@@ -96,9 +97,15 @@ print('Starting the game...')
 tempLoader = Loader()
 from direct.gui import DirectGuiGlobals
 from direct.gui.DirectGui import *
+
+from toontown.pgui import DirectGuiGlobals as PGUIGlobals
+
 print('Setting the default font...')
 import ToontownGlobals
+
 DirectGuiGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont)
+PGUIGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont)
+
 import ToonBase
 ToonBase.ToonBase()
 from panda3d.core import *
@@ -110,6 +117,11 @@ base.graphicsEngine.renderFrame()
 DirectGuiGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
 DirectGuiGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
 DirectGuiGlobals.setDefaultDialogGeom(loader.loadModel('phase_3/models/gui/dialog_box_gui'))
+
+PGUIGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.ogg'))
+PGUIGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.ogg'))
+PGUIGlobals.setDefaultDialogGeom(loader.loadModel('phase_3/models/gui/dialog_box_gui'))
+
 import TTLocalizer
 if base.musicManagerIsValid:
     import random

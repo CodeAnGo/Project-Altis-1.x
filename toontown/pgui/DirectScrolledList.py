@@ -21,7 +21,7 @@ class DirectScrolledListItem(DirectButton):
 
     def __init__(self, parent=None, **kw):
         assert self.notify.debugStateCall(self)
-        self.parent = parent
+        self._parent = parent
         if "command" in kw:
             self.nextCommand = kw.get("command")
             del kw["command"]
@@ -29,7 +29,7 @@ class DirectScrolledListItem(DirectButton):
             self.nextCommandExtraArgs = kw.get("extraArgs")
             del kw["extraArgs"]
         optiondefs = (
-            ('parent', self.parent,    None),
+            ('parent', self._parent,    None),
             ('command', self.select, None),
             )
         # Merge keyword options with default options
@@ -40,7 +40,7 @@ class DirectScrolledListItem(DirectButton):
     def select(self):
         assert self.notify.debugStateCall(self)
         apply(self.nextCommand, self.nextCommandExtraArgs)
-        self.parent.selectListItem(self)
+        self._parent.selectListItem(self)
 
 
 class DirectScrolledList(DirectFrame):

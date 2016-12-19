@@ -36,7 +36,7 @@ class SZHoodAI(HoodAI):
 
         self.createZone()
         self.createStreets()
-        self.createTime()
+        #self.createTime()
         self.createRain()
 
     def createZone(self, genTrolley = True):

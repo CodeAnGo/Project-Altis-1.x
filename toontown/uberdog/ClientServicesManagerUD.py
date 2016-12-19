@@ -45,6 +45,16 @@ class LocalAccountDB:
                       'reason': 'Invalid cookie specified!'})
             return
 
+        if cookie.__len__() != 64:
+            # Cookies should be exactly 64 Characters long!
+            callback({'success': False,
+                      'reason': 'False Cookie Specified. Gosh Darn Hacker!'})
+            return
+
+        # IF I WANT TO BE BITCHEY, I CAN WRITE A LOOKUP HERE TO MAKE SURE THAT THE PLAYCOOKIE IS ACTUALLY IN OUR ACCOUNTS DB, BUT THAT'S NOT NEEDED FOR ALPHA
+
+        # SECONDARILY, HERE'S WHERE WE CAN SPIN OFF TO DUBRARI'S "TOON GUARD" SYSTEM TO ENSURE THAT THE RIGHT IP IS LOGGING INTO THE ACCOUNT, AGAIN, NOT NEEDED FOR ALPHA
+
         # See if the cookie is in the DBM:
         if cookie in self.dbm:
             # Return it w/ account ID!

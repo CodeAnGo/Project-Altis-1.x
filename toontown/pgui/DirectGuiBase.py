@@ -12,7 +12,7 @@ from direct.directtools.DirectUtil import ROUND_TO
 from direct.showbase import DirectObject
 from direct.task import Task
 from direct.showbase import ShowBase
-from direct.showbase.PythonUtil import recordCreationStackStr
+from toontown.toonbase.ToonPythonUtil import recordCreationStackStr
 from pandac.PandaModules import PStatCollector
 import types
 
@@ -633,7 +633,7 @@ class DirectGuiBase(DirectObject.DirectObject):
         # Need to tack on gui item specific id
         gEvent = event + self.guiId
         if base.config.GetBool('debug-directgui-msgs', False):
-            from direct.showbase.PythonUtil import StackTrace
+            from toontown.toonbase.ToonPythonUtil import StackTrace
             print gEvent
             print StackTrace()
         self.accept(gEvent, command, extraArgs = extraArgs)
