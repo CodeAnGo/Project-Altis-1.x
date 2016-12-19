@@ -7,18 +7,18 @@ from toontown.hood import CogHQAI
 from toontown.suit import DistributedSuitPlannerAI
 from toontown.toonbase import ToontownGlobals
 from toontown.betaevent import DistributedBetaEventAI
+from toontown.building import DistributedCJElevatorAI
+from toontown.suit import DistributedLawbotBossAI
 
 class BoardbotHQAI(CogHQAI.CogHQAI):
     def __init__(self, air):
-        """
         CogHQAI.CogHQAI.__init__(
-            self, air, ToontownGlobals.BoardbotHQ, ToontownGlobals.BoardbotLobby,
-            FADoorCodes.BD_DISGUISE_INCOMPLETE,
-            DistributedChairmanElevatorAI.DistributedChairmanElevatorAI,
-            DistributedBoardbotBossAI.DistributedBoardbotBossAI)
+            self, air, ToontownGlobals.BoardbotHQ, ToontownGlobals.LawbotLobby,
+            FADoorCodes.LB_DISGUISE_INCOMPLETE,
+            DistributedCJElevatorAI.DistributedCJElevatorAI,
+            DistributedLawbotBossAI.DistributedLawbotBossAI)
 
-        """
-            
+        self.air = air
         self.boardOfficeElevators = []
         self.officeBoardingParty = None
         self.suitPlanners = []
@@ -26,7 +26,8 @@ class BoardbotHQAI(CogHQAI.CogHQAI):
         self.startup()
 
     def startup(self):
-        #CogHQAI.CogHQAI.startup(self)
+        CogHQAI.CogHQAI.startup(self)
+        self.startEvent()
         pass
 
     def startEvent(self):

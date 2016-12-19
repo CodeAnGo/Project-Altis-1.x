@@ -46,3 +46,10 @@ class BoardbotCogHQLoader(CogHQLoader.CogHQLoader):
     def unload(self):
         CogHQLoader.CogHQLoader.unload(self)
         Toon.unloadSellbotHQAnims()
+
+
+    def getExteriorPlaceClass(self):
+        return BoardbotHQExterior.BoardbotHQExterior
+
+    def getBossPlaceClass(self):
+        return None

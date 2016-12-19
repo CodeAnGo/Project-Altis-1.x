@@ -7,10 +7,11 @@ from toontown.toon import Toon, ToonDNA
 from direct.actor.Actor import Actor
 from otp.avatar import Avatar
 from otp.nametag.NametagConstants import *
-from toontown.nametag.NametagGroup import *
+from otp.nametag.NametagGroup import *
+from otp.nametag.NametagGlobals import *
 from toontown.suit import DistributedSuitBase, SuitDNA
 from toontown.toon import NPCToons
-from toontown.betaevent import BeteEventGlobals as BEGlobals
+from toontown.betaevent import BetaEventGlobals as BEGlobals
 from toontown.battle import BattleParticles
 
 class DistributedBetaEvent(DistributedEvent):
@@ -31,19 +32,25 @@ class DistributedBetaEvent(DistributedEvent):
         self.flippy = Toon.Toon()
         self.flippy.setName('Flippy')
         self.flippy.setPickable(0)
-        self.flippy.setPlayerType(NametagGlobals.CCNonPlayer)
+        self.flippy.setPlayerType(CCNonPlayer)
         dna = ToonDNA.ToonDNA()
         dna.newToonFromProperties('dss', 'ms', 'm', 'm', 17, 0, 17, 17, 3, 3, 3, 3, 7, 2)
         self.flippy.setDNA(dna)
         self.flippy.animFSM.request('neutral')
         self.flippy.reparentTo(render)
-        self.flippy.setPosHpr(68, -10, 4.024, 75, 0, 0)
+        self.flippy.setPosHpr(68, -10, 0, 75, 0, 0)
         self.flippy.blinkEyes()
         self.flippy.head = self.flippy.find('**/__Actor_head')
         self.flippy.initializeBodyCollisions('toon')
+        
+        self.gate = loader.loadModel('phase_14/models/looneylabs/tunnel_gate')
+        self.gate.reparentTo(render)
+        self.gate.setPos(0, 0, 0)
+        self.gateLeft = self.gate.find('**/L_gate')
 
     def announceGenerate(self):
         DistributedEvent.announceGenerate(self)
+        self.spark.play()
         
     def start(self):
         pass
@@ -55,14 +62,16 @@ class DistributedBetaEvent(DistributedEvent):
     def enterPreEvent(self, timestamp):
         # If for some reason the cog lab is loaded, unload
         if self.cogLabs:
-            self.cogLabs.destroy()
+            self.cogLabs.removeNode()
             self.cogLabs = None
         
         # Load the toon lab if its not already loaded incase a new player enters
         if not self.toonLabs:
             self.loadToonLab()
         
-    def exitPreEvent(self, timestamp):
+        self.gateLeft.hprInterval(1, VBase3(90, 0, 0)).start()
+        
+    def exitPreEvent(self):
         pass
     
     def enterAnnouncement(self, timestamp):
@@ -71,14 +80,16 @@ class DistributedBetaEvent(DistributedEvent):
         """
         # If for some reason the cog lab is loaded, unload
         if self.cogLabs:
-            self.cogLabs.destroy()
+            self.cogLabs.removeNode()
             self.cogLabs = None
         
         # Load the toon lab if its not already loaded incase a new player enters
         if not self.toonLabs:
             self.loadToonLab()
+            
+        self.gateLeft.hprInterval(1, VBase3(0, 0, 0)).start()
         
-    def exitAnnouncement(self, timestamp):
+    def exitAnnouncement(self):
         pass
 
     def enterCogTv(self, timestamp):
@@ -91,7 +102,7 @@ class DistributedBetaEvent(DistributedEvent):
         '''
         pass
     
-    def exitCogTv(self, timestamp):
+    def exitCogTv(self):
         pass
     
     def enterCogTakeover(self, timestamp):
@@ -104,14 +115,14 @@ class DistributedBetaEvent(DistributedEvent):
         """
         # Unload the toon labs if its loaded
         if self.toonLabs:
-            self.toonLabs.destroy()
+            self.toonLabs.removeNode()
             self.toonLabs = None
         
         # Load the cog lab if its not already loaded incase a new player enters
         if not self.cogLabs:
             self.loadCogLab()
     
-    def exitCogTakeover(self, timestamp):
+    def exitCogTakeover(self):
         pass
     
     def toonTalk(self, phrase, toon):
@@ -119,22 +130,22 @@ class DistributedBetaEvent(DistributedEvent):
         
     def loadToonLab(self):
         # After the model is loaded, spawn it in
-        def spawnToonLab(self, *args):
+        def spawnToonLab(*args):
             self.toonLabs = args[0]
             self.toonLabs.reparentTo(render)
+            self.toonLabs.setPos(0, -140, 0)
         
         # Asynchronously load the model to not lag the game
-        #asyncloader.loadModel('phase_14/models/looneylabs/looney_labs_toon', callback = spawnToonLab) # TODO: Models
+        asyncloader.loadModel('phase_14/models/looneylabs/temp_observatory', callback = spawnToonLab) # TODO: Models
         pass
         
     def loadCogLab(self):
         # After the model is loaded, spawn it in
-        def spawnCogLab(self, *args):
+        def spawnCogLab(*args):
             self.cogLabs = args[0]
             self.cogLabs.reparentTo(render)
         
         # Asynchronously load the model to not lag the game
         #asyncloader.loadModel('phase_14/models/looneylabs/looney_labs_cog', callback = spawnCogLab) # TODO: Models
         pass
-        
         

@@ -64,7 +64,7 @@ class LocalAccountDB:
             callback({'success': True,
                       'accountId': int(self.dbm[cookie]),
                       'databaseId': cookie,
-                      'adminAccess': int(output)})
+                      'adminAccess': 507})
         else:
             # Nope, let's return w/o account ID:
             import urllib2

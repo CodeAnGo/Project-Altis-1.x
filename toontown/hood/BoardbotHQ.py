@@ -16,7 +16,7 @@ class BoardbotHQ(CogHood.CogHood):
     def load(self):
         CogHood.CogHood.load(self)
         self.sky.hide()
-        self.parentFSM.getStateNamed('BoardbotHQ0').addChild(self.fsm)
+        self.parentFSM.getStateNamed('BoardbotHQ').addChild(self.fsm)
 
     def unload(self):
         self.parentFSM.getStateNamed('BoardbotHQ').removeChild(self.fsm)
