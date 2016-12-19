@@ -7,47 +7,47 @@ Alpha 1.0.0 (Launch)
 *TODO: Put everything that was changed since TTO's closure
 
 Features:
-+ A new cog department is invading Toontown: Boardbots!
-+ Boardbot Cog Buildings
-+ The scientists at Looney Labs have created new ZAP gags!
-+ Day and Night cycle
-+ Weather cycle
-+ Brand new togglable battle GUI
-+ A bunch of new toontasks
-+ The cogs are getting smarter, they have started to build cog buildings with 6 stories!
-+ More toon colors
-+ Rank 8 Cogs go up to Level 50
-+ Sellbot and Lawbot Field Offices
-+ 4K HD Resoultion Support
-+ Rain in Bossbot HQ
-+ Ability to delete SOS Cards
-+ Spinning Piano in Melodyland
-+ Match Kion, the new matching minigame, that replaces Match Minnie
-+ New Cog Attacks (Throw Book, Re-Org, and Cigar Smoke)
+<li>+ A new cog department is invading Toontown: Boardbots!</li>
+<li>+ Boardbot Cog Buildings</li>
+<li>+ The scientists at Looney Labs have created new ZAP gags!</li>
+<li>+ Day and Night cycle</li>
+<li>+ Weather cycle</li>
+<li>+ Brand new togglable battle GUI</li>
+<li>+ A bunch of new toontasks</li>
+<li>+ The cogs are getting smarter, they have started to build cog buildings with 6 stories!</li>
+<li>+ More toon colors</li>
+<li>+ Rank 8 Cogs go up to Level 50</li>
+<li>+ Sellbot and Lawbot Field Offices</li>
+<li>+ 4K HD Resoultion Support</li>
+<li>+ Rain in Bossbot HQ</li>
+<li>+ Ability to delete SOS Cards</li>
+<li>+ Spinning Piano in Melodyland</li>
+<li>+ Match Kion, the new matching minigame, that replaces Match Minnie</li>
+<li>+ New Cog Attacks (Throw Book, Re-Org, and Cigar Smoke)</li>
 
 (incomplete)
 
 Tweaks:
-* Revamped PICK-A-TOON screen
-+ Added options to the PICK-A-TOON screen
-+ Added key remapping
-* All animations are now interpolated - everything will look smooth as butter!
-* DA Office lazer puzzles no longer have cogs, instead a laff penalty is applied
-* Updated cog building textures to be colorized based on department
-* The snow has picked up in toontown!
-* Cogs now roam Bossbot HQ
-* Smoother tunnel exiting camera animations
-* Smoother trolley camera animations
-* Revamped loading screen
-* Roof Floor for Cog Buildings
-* All Cog Types in CEO
-* Cog Suit Parts from Facilities, instead of ToonTasks
-* Cog Randomizers for Cog Thief, Tug of War, and Catching Game
+<li>* Revamped PICK-A-TOON screen</li>
+<li>+ Added options to the PICK-A-TOON screen</li>
+<li>+ Added key remapping</li>
+<li>* All animations are now interpolated - everything will look smooth as butter!</li>
+<li>* DA Office lazer puzzles no longer have cogs, instead a laff penalty is applied</li>
+<li>* Updated cog building textures to be colorized based on department</li>
+<li>* The snow has picked up in toontown!</li>
+<li>* Cogs now roam Bossbot HQ</li>
+<li>* Smoother tunnel exiting camera animations</li>
+<li>* Smoother trolley camera animations</li>
+<li>* Revamped loading screen</li>
+<li>* Roof Floor for Cog Buildings</li>
+<li>* All Cog Types in CEO</li>
+<li>* Cog Suit Parts from Facilities, instead of ToonTasks</li>
+<li>* Cog Randomizers for Cog Thief, Tug of War, and Catching Game</li>
 
 
 
 (incomplete)
 
 Bug Fixes:
-* Game will freeze less when loading
-* Fixed knockback from TTO
+<li>* Game will freeze less when loading</li>
+<li>* Fixed knockback from TTO</li>
