@@ -525,7 +525,10 @@ Sleeves = ['phase_3/maps/desat_sleeve_1.jpg',
  'phase_4/maps/tt_t_chr_avt_shirtSleeve_anniversary.jpg',
  'phase_4/maps/tt_t_chr_avt_shirtSleeve_sora.jpg',                         
  'phase_4/maps/tt_t_chr_avt_shirtSleeve_slappy.jpg',
- 'phase_4/maps/BossbotSleeve.jpg']
+ 'phase_4/maps/BossbotSleeve.jpg',
+ 'phase_4/maps/jacket-s.png',
+ 'phase_4/maps/altis_s.png'
+ ]
 BoyShorts = ['phase_3/maps/desat_shorts_1.jpg',
  'phase_3/maps/desat_shorts_2.jpg',
  'phase_3/maps/desat_shorts_4.jpg',
@@ -586,9 +589,7 @@ BoyShorts = ['phase_3/maps/desat_shorts_1.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_racing05.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_sora.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_slappy.jpg',
- 'phase_4/maps/BossbotShorts.jpg',
- 'phase_4/maps/jacket-s.png',
- 'phase_4/maps/altis_s.png'
+ 'phase_4/maps/BossbotShorts.jpg'
  ]
 SHORTS = 0
 SKIRT = 1
