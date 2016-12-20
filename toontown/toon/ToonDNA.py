@@ -330,7 +330,9 @@ Shirts = [
  'phase_4/maps/tt_t_chr_avt_shirt_anniversary.jpg',
  'phase_4/maps/tt_t_chr_avt_shirt_sora.jpg',                               
  'phase_4/maps/tt_t_chr_avt_shirt_slappy.jpg',                             
- 'phase_4/maps/BossbotShirt.jpg'
+ 'phase_4/maps/BossbotShirt.jpg',
+ 'phase_4/maps/jacket.png',
+ 'phase_4/maps/altis.png'
 ]
 BoyShirts = [
  (0, 0),
@@ -584,7 +586,10 @@ BoyShorts = ['phase_3/maps/desat_shorts_1.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_racing05.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_sora.jpg',
  'phase_4/maps/tt_t_chr_avt_shorts_slappy.jpg',
- 'phase_4/maps/BossbotShorts.jpg']
+ 'phase_4/maps/BossbotShorts.jpg',
+ 'phase_4/maps/jacket-s.png',
+ 'phase_4/maps/altis_s.png'
+ ]
 SHORTS = 0
 SKIRT = 1
 GirlBottoms = [('phase_3/maps/desat_skirt_1.jpg', SKIRT),
