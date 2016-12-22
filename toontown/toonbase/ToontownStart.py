@@ -168,8 +168,8 @@ autoRun = ConfigVariableBool('toontown-auto-run', 1)
 if autoRun:
     try:
         base.run()
-    except SystemExit:
-        raise
+    except Exception as e:
+        raise (e)
     except:
         print describeException()
         raise

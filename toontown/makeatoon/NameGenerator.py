@@ -8,6 +8,8 @@ from toontown.toonbase import TTLocalizer
 import os
 from direct.showbase import AppRunnerGlobal
 from direct.directnotify import DirectNotifyGlobal
+import ToonNamesEnglish
+from StringIO import StringIO
 
 class NameGenerator:
     text = TextNode('text')
@@ -38,13 +40,7 @@ class NameGenerator:
         self.lastPrefixes = []
         self.lastSuffixes = []
         self.nameDictionary = {}
-        searchPath = DSearchPath()
-        searchPath.appendDirectory(Filename('/phase_3/etc'))
-        filename = Filename(TTLocalizer.NameShopNameMaster)
-        found = vfs.resolveFilename(filename, searchPath)
-        if not found:
-            self.notify.error("NameGenerator: Error opening name list text file '%s.'" % TTLocalizer.NameShopNameMaster)
-        input = StreamReader(vfs.openReadFile(filename, 1), 1)
+        input = StringIO(ToonNamesEnglish.TOONNAMES)
         currentLine = input.readline()
         while currentLine:
             if currentLine.lstrip()[0:1] != '#':

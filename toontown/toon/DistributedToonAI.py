@@ -5060,7 +5060,7 @@ def dna(part, value):
         else:
             return "DNA: Invalid gender. Stick to 'male' or 'female'."
     elif part=='species':
-        species = ['dog', 'cat', 'horse', 'mouse', 'rabbit', 'duck', 'monkey', 'bear', 'pig']
+        species = ['dog', 'cat', 'horse', 'mouse', 'rabbit', 'duck', 'monkey', 'bear', 'pig', 'deer']
         if value not in species:
             return "DNA: Invalid head type specified."
         species = dict(map(None, species, ToonDNA.toonSpeciesTypes))

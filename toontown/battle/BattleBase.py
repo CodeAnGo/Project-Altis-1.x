@@ -229,8 +229,9 @@ class BattleBase:
      posB,
      posA]
     suitSpeed = 4.8
-    toonSpeed = 8.0
-
+    toonSpeed = 9.0
+    maxTimeToon = 10.0
+    maxTimeSuit = 11.0
     def __init__(self):
         self.pos = Point3(0, 0, 0)
         self.initialSuitPos = Point3(0, 1, 0)
@@ -257,15 +258,15 @@ class BattleBase:
         facing.normalize()
         suitdest = Point3(centerpos - Point3(facing * 6.0))
         dist = Vec3(suitdest - suitpos).length()
-        return dist / BattleBase.suitSpeed
+        return min(dist / BattleBase.suitSpeed, BattleBase.maxTimeSuit)
 
     def calcSuitMoveTime(self, pos0, pos1):
         dist = Vec3(pos0 - pos1).length()
-        return dist / BattleBase.suitSpeed
+        return min(dist / BattleBase.suitSpeed, BattleBase.maxTimeSuit)
 
     def calcToonMoveTime(self, pos0, pos1):
         dist = Vec3(pos0 - pos1).length()
-        return dist / BattleBase.toonSpeed
+        return min(dist / BattleBase.toonSpeed, BattleBase.maxTimeToon)
 
     def buildJoinPointList(self, avPos, destPos, toon = 0):
         minDist = 999999.0

@@ -207,13 +207,13 @@ group "daisysGarden" [
     stumble [ 0.1 ]
 	width [ 2 ]
     text [
-     letters [ "C" ]
+     letters [ "" ]
     ]
     text [
-     letters [ "H" ]
+     letters [ "" ]
     ]
     text [
-     letters [ "E" ]
+     letters [ "" ]
     ]
     text [
      letters [ " " ]

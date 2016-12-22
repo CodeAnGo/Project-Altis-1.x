@@ -194,8 +194,12 @@ class ToonBase(OTPBase.OTPBase):
         
         self.showDisclaimer = settings.get('show-disclaimer', True) # Show this the first time the user starts the game, it is set in the settings to False once they pick a toon
 
+        self.lodMaxRange = 750
+        self.lodMinRange = 25
+        self.lodDelayFactor = 0.3
+        
         # enable this feature, if you have render pipeline installed
-        if config.GetBool('want-pipeline-renderer', True):
+        if config.GetBool('want-pipeline-renderer', False):
             from rpcore import RenderPipeline, SpotLight
             self.loadPipeline()
 
@@ -457,7 +461,7 @@ class ToonBase(OTPBase.OTPBase):
             gameServer = launcherServer
             self.notify.info('Using gameServer from launcher: %s ' % gameServer)
         else:
-            gameServer = '188.165.250.225'
+            gameServer = 'gs1.projectaltis.com'
         serverPort = config.GetInt('server-port', 7198)
         serverList = []
         for name in gameServer.split(';'):

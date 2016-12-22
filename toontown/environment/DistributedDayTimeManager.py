@@ -22,7 +22,7 @@ class DistributedDayTimeManager(DistributedWeatherMGR):
         DistributedWeatherMGR.__init__(self, cr)
         self.cr = cr
         self.hood = base.cr.playGame.hood
-        self.interval = 150
+        self.interval = 2
         self.hour2sky = {
             0: 'night',
             1: 'night',

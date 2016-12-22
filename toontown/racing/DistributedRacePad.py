@@ -8,6 +8,7 @@ from toontown.racing import RaceGlobals
 from toontown.toonbase.ToontownTimer import ToontownTimer
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals
+from panda3d.core import *
 from toontown.racing.KartShopGlobals import KartGlobals
 
 class DistributedRacePad(DistributedKartPad, FSM):

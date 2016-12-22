@@ -30,7 +30,7 @@ class ShardPicker(ShtikerPage.ShtikerPage):
         self.textDisabledColor = Vec4(0.4, 0.8, 0.4, 1)
         self.ShardInfoUpdateInterval = 5.0
         self.lowPop, self.midPop, self.highPop = base.getShardPopLimits()
-        self.showPop = config.GetBool('show-total-population', 1)
+        self.showPop = True #config.GetBool('show-total-population', 1)
         self.adminForceReload = 0
         self.load()
         return
@@ -108,12 +108,12 @@ class ShardPicker(ShtikerPage.ShtikerPage):
             if shardPop == None:
                 popText = ''
             shardButtonR = DirectButton(parent=shardButtonParent, relief=None, text=popText, text_scale=0.06, text_align=TextNode.ALeft, text1_bg=self.textDownColor, text2_bg=self.textRolloverColor, text3_fg=self.textDisabledColor, textMayChange=1, pos=(0.5, 0, 0), command=self.choseShard, extraArgs=[shardId])
-            shardButtonHour = DirectButton(parent=shardButtonParent, relief=None, text="Hour: " + str(shardHour), text_scale=0.06, text_align=TextNode.ALeft, text1_bg=self.textDownColor, text2_bg=self.textRolloverColor, text3_fg=self.textDisabledColor, textMayChange=1, pos=(0.25, 0, 0), command=self.choseShard, extraArgs=[shardId])
+            shardButtonHour = DirectButton(parent=shardButtonParent, relief=None, text="", text_scale=0.06, text_align=TextNode.ALeft, text1_bg=self.textDownColor, text2_bg=self.textRolloverColor, text3_fg=self.textDisabledColor, textMayChange=1, pos=(0.25, 0, 0), command=self.choseShard, extraArgs=[shardId])
         else:
             model = loader.loadModel('phase_3.5/models/gui/matching_game_gui')
             button = model.find('**/minnieCircle')
             shardButtonR = DirectButton(parent=shardButtonParent, relief=None, image=button, image_scale=(0.3, 1, 0.3), image2_scale=(0.35, 1, 0.35), image_color=self.getPopColor(shardPop), pos=(0.6, 0, 0.0125), text=self.getPopText(shardPop), text_scale=0.06, text_align=TextNode.ACenter, text_pos=(-0.0125, -0.0125), text_fg=Vec4(0, 0, 0, 0), text1_fg=Vec4(0, 0, 0, 0), text2_fg=Vec4(0, 0, 0, 1), text3_fg=Vec4(0, 0, 0, 0), command=self.getPopChoiceHandler(shardPop), extraArgs=[shardId])
-            shardButtonHour = DirectButton(parent=shardButtonParent, relief=None, text="Hour: " + str(shardHour), text_scale=0.06, text_align=TextNode.ALeft, text1_bg=self.textDownColor, text2_bg=self.textRolloverColor, text3_fg=self.textDisabledColor, textMayChange=1, pos=(0.25, 0, 0), command=self.choseShard, extraArgs=[shardId])
+            shardButtonHour = DirectButton(parent=shardButtonParent, relief=None, text="", text_scale=0.06, text_align=TextNode.ALeft, text1_bg=self.textDownColor, text2_bg=self.textRolloverColor, text3_fg=self.textDisabledColor, textMayChange=1, pos=(0.25, 0, 0), command=self.choseShard, extraArgs=[shardId])
 
             del model
             del button

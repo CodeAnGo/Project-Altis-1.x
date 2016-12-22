@@ -47,6 +47,8 @@ class DistributedMinigameAI(DistributedObjectAI.DistributedObjectAI):
             self.trolleyZoneOverride = None
             self.metagameRound = -1
             self.startingVotes = {}
+            self.skipVoters = []
+            self.voteSkipEnabled = True # Enable it for the beginning of the game, we will then disable it once the game starts or gtes skipped
 
         return
 
@@ -96,6 +98,7 @@ class DistributedMinigameAI(DistributedObjectAI.DistributedObjectAI):
     def generate(self):
         DistributedObjectAI.DistributedObjectAI.generate(self)
         self.frameworkFSM.request('frameworkWaitClientsJoin')
+        self.sendUpdate('setVoteSkips', [0]) 
 
     def delete(self):
         self.notify.debug('BASE: delete: deleting AI minigame object')
@@ -301,7 +304,7 @@ class DistributedMinigameAI(DistributedObjectAI.DistributedObjectAI):
 
         scoreList = []
         if not self.normalExit:
-            randReward = random.randrange(DEFAULT_POINTS, MAX_POINTS + 1)
+            randReward = 0
         for avId in self.avIdList:
             if self.normalExit:
                 score = int(self.scoreDict[avId] + 0.5)
@@ -446,3 +449,38 @@ class DistributedMinigameAI(DistributedObjectAI.DistributedObjectAI):
 
     def getMetagameRound(self):
         return self.metagameRound
+
+    def requestSkip(self):
+        avId = self.air.getAvatarIdFromSender()
+        
+        if self.voteSkipEnabled and avId in self.avIdList and avId not in self.skipVoters:
+            self.skipVoters.append(avId)
+            if self.checkSkipPercentage():
+                self.voteSkipEnabled = False
+                self.setGameAbort()
+            else:
+                self.sendUpdate('setVoteSkips', [len(self.skipVoters)]) 
+        else:
+            return
+    
+    def checkSkipPercentage(self):
+        # For the percentage to pass:
+        # For 1 toon - obviously skip
+        # For 2 toons - both agree
+        # For 3 toons - 2/3
+        # For 4 toons - 3/4
+        
+        if len(self.avIdList) == 1:
+            if len(self.skipVoters) == 1:
+                return True
+        elif len(self.avIdList) == 2:
+            if len(self.skipVoters) == 2:
+                return True
+        elif len(self.avIdList) == 3:
+            if len(self.skipVoters) >= 2:
+                return True
+        elif len(self.avIdList) == 4:
+            if len(self.skipVoters) >= 3:
+                return True
+        else:
+            return False            

@@ -874,7 +874,10 @@ class OTPClientRepository(ClientRepositoryBase):
             style = OTPDialog.TwoChoice
         dialogClass = OTPGlobals.getGlobalDialogClass()
         self.lostConnectionBox = PopupDialog.PopupDialog()
-        self.lostConnectionBox.start(message, yesText = 'Retry', noText = 'Exit Game', doneEvent = 'lostConnectionAck', isError = True)
+        if __dev__:
+            self.lostConnectionBox.start(message, yesText = 'Retry', noText = 'Exit Game', doneEvent = 'lostConnectionAck', isError = True)
+        else:   
+            self.lostConnectionBox.start(message, yesText = 'HIDE_YES', noText = 'Exit Game', doneEvent = 'lostConnectionAck', isError = True)
         self.accept('lostConnectionAck', self.__handleLostConnectionAck)
         self.notify.warning('Lost connection to server. Notifying user.')
         return

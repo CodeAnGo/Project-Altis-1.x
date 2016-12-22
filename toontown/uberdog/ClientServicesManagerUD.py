@@ -6,6 +6,7 @@ from toontown.toon.ToonDNA import ToonDNA
 from toontown.makeatoon.NameGenerator import NameGenerator
 from toontown.toonbase import TTLocalizer
 from otp.distributed import OtpDoGlobals
+from toontown.uberdog.BanManagerUD import BanManagerUD
 from sys import platform
 import dumbdbm
 import anydbm
@@ -59,7 +60,7 @@ class LocalAccountDB:
         if cookie in self.dbm:
             # Return it w/ account ID!
             import urllib2
-            url = "http://188.165.250.225/Dubrari/powerCheck.php?token="+str(cookie) # As account is already in DBM, we need to CHECK it's level
+            url = "http://gs1.projectaltis.com/Dubrari/powerCheck.php?token="+str(cookie) # As account is already in DBM, we need to CHECK it's level
             output = urllib2.urlopen(url).read()
             callback({'success': True,
                       'accountId': int(self.dbm[cookie]),
@@ -68,7 +69,7 @@ class LocalAccountDB:
         else:
             # Nope, let's return w/o account ID:
             import urllib2
-            url = "http://188.165.250.225/Dubrari/powerCreate.php?token="+str(cookie)+"&level=150" # As account is being created with access 150, we need to tell level DB that it's level for checking later
+            url = "http://gs1.projectaltis.com/Dubrari/powerCreate.php?token="+str(cookie)+"&level=150" # As account is being created with access 150, we need to tell level DB that it's level for checking later
             output = urllib2.urlopen(url).read()
             callback({'success': True,
                       'accountId': 0,
@@ -841,9 +842,14 @@ class ClientServicesManagerUD(DistributedObjectGlobalUD):
         # of race conditions.
         self.connection2fsm = {}
         self.account2fsm = {}
+        self.sessionKey = '4ZHk9Gu3zBURVTdZUjpCDx1IS8GdhuOjg67IQQSpZsE='
 
         # For processing name patterns.
         self.nameGenerator = NameGenerator()
+        
+        # Setup ban manager
+        self.banManager = BanManagerUD(self.air)
+        self.banManager.setup()
 
         # Instantiate our account DB interface using config:
         dbtype = config.GetString('accountdb-type', 'local')
@@ -879,6 +885,7 @@ class ClientServicesManagerUD(DistributedObjectGlobalUD):
         if not fsm:
             self.notify.warning('Tried to kill account %d for duplicate FSM, but none exists!' % accountId)
             return
+        
         self.killAccount(accountId, 'An operation is already underway: ' + fsm.name)
 
     def runAccountFSM(self, fsmtype, *args):
@@ -888,7 +895,11 @@ class ClientServicesManagerUD(DistributedObjectGlobalUD):
             self.killAccount(sender, 'Client is not logged in.')
 
         if sender in self.account2fsm:
-            self.killAccountFSM(sender)
+            # Hot fix for potential toons that's FSM is stuck in state.
+            self.account2fsm[sender].demand('Off')
+
+            # kick the client because there is a major issue!
+            self.killAccount(sender, 'Failed to login, because your account is already in FSM state!')
             return
 
         self.account2fsm[sender] = fsmtype(self, sender)
@@ -897,9 +908,10 @@ class ClientServicesManagerUD(DistributedObjectGlobalUD):
     def setLoginEnabled(self, enable):
         if not enable:
             self.notify.warning('The CSMUD has been told to reject logins! All future logins will now be rejected.')
+        
         self.loginsEnabled = enable
 
-    def login(self, cookie):
+    def login(self, cookie, sessionKey):
         self.notify.debug('Received login cookie %r from %d' % (cookie, self.air.getMsgSender()))
 
         sender = self.air.getMsgSender()
@@ -912,13 +924,30 @@ class ClientServicesManagerUD(DistributedObjectGlobalUD):
             dg.addString('Logins are currently disabled. Please try again later.')
             self.air.send(dg)
 
-        if sender>>32:
+        if sender >> 32:
             # Oops, they have an account ID on their connection already!
             self.killConnection(sender, 'Client is already logged in.')
             return
 
         if sender in self.connection2fsm:
-            self.killConnectionFSM(sender)
+            # Hot fix for potential toons that's FSM is stuck in state.
+            self.connection2fsm[sender].demand('Off')
+
+            # kick the client because there is a major issue!
+            self.killConnection(sender, 'Failed to login, because your account is already in FSM state!')
+            return
+        
+        if sessionKey != self.sessionKey:
+            self.killConnection(sender, 'Failed to login, recieved a bad login cookie!')
+            
+            # notify the admin that someone tried to login with a custom client.
+            self.notify.warning('%s: Tried to login with a custom client using sessionKey, %s!' % (sender, str(
+                sessionKey)))
+            
+            return
+        
+        if self.banManager.getToonBanned(cookie):
+            self.killConnection(sender, self.banManager.getToonBanReason(cookie))
             return
 
         self.connection2fsm[sender] = LoginAccountFSM(self, sender)

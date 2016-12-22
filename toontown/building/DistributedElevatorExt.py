@@ -22,6 +22,7 @@ class DistributedElevatorExt(DistributedElevator.DistributedElevator):
         DistributedElevator.DistributedElevator.__init__(self, cr)
         self.nametag = None
         self.currentFloor = -1
+        self.__setFloorNumber = None
         return
 
     def setupElevator(self):
@@ -76,14 +77,20 @@ class DistributedElevatorExt(DistributedElevator.DistributedElevator):
         if not self.bldg:
             self.notify.error('setBldgDoId: elevator %d cannot find bldg %d!' % (self.doId, self.bldgDoId))
             return
-        if self.getBldgDoorOrigin():
-            self.bossLevel = self.bldg.getBossLevel()
-            self.setupElevator()
         else:
-            self.notify.warning('setBldgDoId: elevator %d cannot find suitDoorOrigin for bldg %d!' % (self.doId, self.bldgDoId))
-        return
+            if self.getBldgDoorOrigin():
+                self.bossLevel = self.bldg.getBossLevel()
+                self.setupElevator()
+            else:
+                self.notify.warning('setBldgDoId: elevator %d cannot find suitDoorOrigin for bldg %d!' % (self.doId, self.bldgDoId))
+            if self.__setFloorNumber is not None:
+                self.setFloor(self.__setFloorNumber)
+            return
 
     def setFloor(self, floorNumber):
+        if not hasattr(self, 'bldg'):
+            self.__setFloorNumber = floorNumber
+            return
         if self.currentFloor >= 0:
             if self.bldg.floorIndicator[self.currentFloor]:
                 self.bldg.floorIndicator[self.currentFloor].setColor(LIGHT_OFF_COLOR)

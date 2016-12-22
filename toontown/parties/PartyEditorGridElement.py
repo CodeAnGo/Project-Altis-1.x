@@ -40,7 +40,7 @@ class PartyEditorGridElement(DirectButton):
          ('geom3_color', colorList[0], None),
          ('relief', None, None))
         self.defineoptions(kw, optiondefs)
-        DirectButton.__init__(self, self.partyEditor.parent)
+        DirectButton.__init__(self, self.partyEditor._parent)
         self.initialiseoptions(PartyEditorGridElement)
         self.setName('%sGridElement' % self.name)
         self.bind(DirectGuiGlobals.B1PRESS, self.clicked)

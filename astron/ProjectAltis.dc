@@ -1556,6 +1556,8 @@ dclass DistributedMinigame : DistributedObject {
   setGameStart(int16 timestamp) broadcast;
   setGameExit() broadcast;
   setGameAbort() broadcast;
+  requestSkip() airecv clsend;
+  setVoteSkips(uint8) broadcast;
 };
 
 dclass DistributedMinigameTemplate : DistributedMinigame {
@@ -3748,7 +3750,7 @@ struct PotentialToon {
 };
 
 dclass ClientServicesManager : DistributedObjectGlobal {
-  login(string cookie) clsend;
+  login(string, string) clsend;
   acceptLogin();
 
   requestAvatars() clsend;

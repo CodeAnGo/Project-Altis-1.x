@@ -6,6 +6,8 @@ from direct.showbase import AppRunnerGlobal
 from direct.directnotify import DirectNotifyGlobal
 from panda3d.core import *
 from panda3d.direct import *
+import PetNamesEnglish
+from StringIO import StringIO
 
 class PetNameGenerator:
     notify = DirectNotifyGlobal.directNotify.newCategory('PetNameGenerator')
@@ -21,13 +23,7 @@ class PetNameGenerator:
         self.girlFirsts = []
         self.neutralFirsts = []
         self.nameDictionary = {}
-        searchPath = DSearchPath()
-        searchPath.appendDirectory(Filename('resources/phase_3/etc'))
-        filename = Filename('PetNameMasterEnglish.txt') # TTLocalizer.PetNameMaster
-        found = vfs.resolveFilename(filename, searchPath)
-        if not found:
-            self.notify.error('PetNameGenerator: Error opening name list text file.')
-        input = StreamReader(vfs.openReadFile(filename, 1), 1)
+        input = StringIO(PetNamesEnglish.PETNAMES)
         currentLine = input.readline()
         while currentLine:
             if currentLine.lstrip()[0:1] != '#':

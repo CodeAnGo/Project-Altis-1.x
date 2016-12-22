@@ -86,11 +86,6 @@ class Hood(StateData.StateData):
             files.append(self.storageDNAFile)
 
         newsManager = base.cr.newsManager
-        self.sky = loader.loadModel(self.skyFile)
-        self.sky.setTag('sky', 'Regular')
-        self.sky.setScale(1.0)
-        self.sky.setFogOff()
-
         dnaBulk = DNABulkLoader(self.dnaStore, tuple(files))
         dnaBulk.loadDNAFiles()
 
@@ -104,8 +99,15 @@ class Hood(StateData.StateData):
         del self.parentFSM
         self.dnaStore.resetHood()
         del self.dnaStore
-        self.sky.removeNode()
-        del self.sky
+        if hasattr(self, 'sky'):
+            if self.sky:
+                self.sky.removeNode()
+                del self.sky
+        if hasattr(self, 'newSky'):
+            if self.sky:
+                self.newSky.removeNode()
+                del self.newSky
+            
         self.ignoreAll()
         ModelPool.garbageCollect()
         TexturePool.garbageCollect()
@@ -283,7 +285,8 @@ class Hood(StateData.StateData):
 
     def skyTransition(self, sky):
         if self.id != DonaldsDreamland or self.id != DonaldsDock or self.id != TheBrrrgh:
-            self.oldSky = self.sky
+            if hasattr(self, 'sky'):
+                self.oldSky = self.sky
             if sky == 'mml':
                 self.newSky = loader.loadModel(self.mmlSkyFile)
                 self.newSky.setTag('sky', 'MML')
@@ -311,9 +314,9 @@ class Hood(StateData.StateData):
                 ce = CompassEffect.make(NodePath(), CompassEffect.PRot | CompassEffect.PZ)
                 self.newSky.node().setEffect(ce)
                 self.newSky.reparentTo(camera)
-                newFadeIn = LerpColorScaleInterval(self.newSky, 5, Vec4(1, 1, 1, 1), startColorScale=Vec4(1, 1, 1, 0), blendType='easeInOut')
+                newFadeIn = LerpColorScaleInterval(self.newSky, 3, Vec4(1, 1, 1, 1), startColorScale=Vec4(1, 1, 1, 0), blendType='easeInOut')
                 if self.oldSky:
-                    oldFadeOut = LerpColorScaleInterval(self.oldSky, 5, Vec4(1, 1, 1, 0), startColorScale=Vec4(1, 1, 1, 1), blendType='easeInOut')
+                    oldFadeOut = LerpColorScaleInterval(self.oldSky, 3, Vec4(1, 1, 1, 0), startColorScale=Vec4(1, 1, 1, 1), blendType='easeInOut')
                 else:
                     oldFadeOut = Wait(0) # Just do that to please the sequence so it doesnt crash
                 Sequence(

@@ -749,7 +749,7 @@ class Suit(Avatar.Avatar):
         self.loadAnims(animDict)
         self.setSuitClothes()
         self.setBlend(frameBlend = True)
-        self.setLODAnimation(750, 40, .4)
+        self.setLODAnimation(base.lodMaxRange, base.lodMinRange, base.lodDelayFactor)
 
     def generateAnimDict(self):
         animDict = {}
@@ -1099,7 +1099,7 @@ class Suit(Avatar.Avatar):
         self.generateCorporateTie()
         self.setHeight(self.height)
         self.setBlend(frameBlend = True)
-        self.setLODAnimation(750, 40, .4)
+        self.setLODAnimation(base.lodMaxRange, base.lodMinRange, base.lodDelayFactor)
         parts = self.findAllMatches('**/pPlane*')
         for partNum in xrange(0, parts.getNumPaths()):
             bb = parts.getPath(partNum)

@@ -54,7 +54,7 @@ uberdogs:
 roles:
     - type: clientagent
       bind: 188.165.250.225:7198
-      version: "1.0.0"
+      version: "1.1.0"
       client:
        relocate: true
        add_interest: enabled

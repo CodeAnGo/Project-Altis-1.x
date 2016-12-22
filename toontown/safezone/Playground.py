@@ -231,7 +231,7 @@ class Playground(Place.Place):
                 lightsOff = Sequence(LerpColorScaleInterval(base.cr.playGame.hood.loader.geom, 0.1, Vec4(0.55, 0.55, 0.65, 1)), Func(self.loader.hood.startSpookySky), Func(__lightDecorationOn__))
                 lightsOff.start()
             else:
-                self.loader.hood.startSky()
+                #self.loader.hood.startSky()
                 lightsOn = LerpColorScaleInterval(base.cr.playGame.hood.loader.geom, 0.1, Vec4(1, 1, 1, 1))
                 lightsOn.start()
             #Christmas Event
@@ -254,11 +254,11 @@ class Playground(Place.Place):
                 self.snowEvent2.start(camera, self.snowEventRender)
                 self.snowEvent3.start(camera, self.snowEventRender)
             else:
-                self.loader.hood.startSky()
+                #self.loader.hood.startSky()
                 lightsOn = LerpColorScaleInterval(base.cr.playGame.hood.loader.geom, 0.1, Vec4(1, 1, 1, 1))
                 lightsOn.start()
         else:
-            self.loader.hood.startSky()
+            #self.loader.hood.startSky()
             lightsOn = LerpColorScaleInterval(base.cr.playGame.hood.loader.geom, 0.1, Vec4(1, 1, 1, 1))
             lightsOn.start()
         NametagGlobals.setMasterArrowsOn(1)

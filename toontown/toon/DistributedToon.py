@@ -414,6 +414,7 @@ class DistributedToon(DistributedPlayer.DistributedPlayer, Toon.Toon, Distribute
                 Toon.MonkeyDialogueArray,
                 Toon.BearDialogueArray,
                 Toon.PigDialogueArray,
+                Toon.DeerDialogueArray,
             ]
             try: return types[self.animalSound]
             except: return Toon.Toon.getDialogueArray(self, *args)
@@ -765,8 +766,6 @@ class DistributedToon(DistributedPlayer.DistributedPlayer, Toon.Toon, Distribute
 
     def setTutorialAck(self, tutorialAck):
         self.tutorialAck = 1
-        if config.GetBool('want-toontorial', 1):
-            self.tutorialAck = tutorialAck
 
     def setEarnedExperience(self, earnedExp):
         self.earnedExperience = earnedExp

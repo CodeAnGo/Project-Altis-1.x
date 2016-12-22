@@ -14,6 +14,7 @@ class ToonChatGarbler(ChatGarbler.ChatGarbler):
      'monkey': TTLocalizer.ChatGarblerMonkey,
      'bear': TTLocalizer.ChatGarblerBear,
      'pig': TTLocalizer.ChatGarblerPig,
+     'deer': TTLocalizer.ChatGarblerDeer,
      'default': OTPLocalizer.ChatGarblerDefault}
 
     def garble(self, toon, message):

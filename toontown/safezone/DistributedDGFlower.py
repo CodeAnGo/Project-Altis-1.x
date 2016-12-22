@@ -4,7 +4,7 @@ from direct.distributed.ClockDelta import *
 from direct.distributed import DistributedObject
 from toontown.toonbase import ToontownGlobals
 from direct.task import Task
-SPIN_RATE = 12.5
+SPIN_RATE = 18
 
 class DistributedDGFlower(DistributedObject.DistributedObject):
     def __init__(self, cr):
@@ -13,8 +13,8 @@ class DistributedDGFlower(DistributedObject.DistributedObject):
     def generate(self):
         DistributedObject.DistributedObject.generate(self)
         self.bigFlower = loader.loadModel('phase_8/models/props/DG_flower-mod')
-        self.bigFlower.setPos(1.39, 92.91, 2.0)
-        self.bigFlower.setScale(2.5)
+        self.bigFlower.setPos(5, 137, 2.0)
+        self.bigFlower.setScale(4)
         self.bigFlower.reparentTo(render)
         self.flowerCollSphere = CollisionSphere(0, 0, 0, 4.5)
         self.flowerCollSphereNode = CollisionNode('bigFlowerCollide')

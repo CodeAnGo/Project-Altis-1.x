@@ -26,7 +26,6 @@ class GolfHoleBase:
         self.frame = 0
         self.onSlick = 0
         self.didHoleBreak = 0
-        return
 
     def loadLevel(self):
         tm = self.holeInfo['terrainModel']
@@ -36,6 +35,7 @@ class GolfHoleBase:
             self.terrainModel.reparentTo(render)
         if self.canRender:
             self.terrainModel.find('**/softSurface').setBin('ground', 0)
+        
         terrainData = self.terrainModel.find('**/softSurface')
         grassData = terrainData.findAllMatches('**/grass*')
         self.terrainData = []
@@ -146,7 +146,6 @@ class GolfHoleBase:
         self.recording = None
         self.avRecording = None
         self.llv = None
-        return
 
     def initRecord(self):
         del self.recording

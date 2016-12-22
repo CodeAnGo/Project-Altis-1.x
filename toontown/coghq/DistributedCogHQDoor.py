@@ -9,6 +9,7 @@ from toontown.building import FADoorCodes
 from toontown.building import DoorTypes
 from toontown.toonbase import TTLocalizer
 from toontown.toontowngui import TeaserPanel
+from panda3d.core import *
 
 class DistributedCogHQDoor(DistributedDoor.DistributedDoor):
 

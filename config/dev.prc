@@ -7,7 +7,7 @@ want-pipeline-renderer false
 
 # Client settings
 window-title Project Altis
-server-version 1.0.0
+server-version 1.1.0
 build-version dev
 sync-video #f
 want-dev #f

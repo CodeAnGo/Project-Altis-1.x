@@ -44,6 +44,7 @@ class DistributedMinigame(DistributedObject.DistributedObject):
         hoodMinigameState.addChild(self.frameworkFSM)
         self.rulesDoneEvent = 'rulesDone'
         self.acceptOnce('minigameAbort', self.d_requestExit)
+        self.acceptOnce('minigameVoteSkip', self.requestVoteSkip)
         base.curMinigame = self
         self.modelCount = 500
         self.cleanupActions = []
@@ -203,6 +204,7 @@ class DistributedMinigame(DistributedObject.DistributedObject):
         if hasattr(base, 'curMinigame'):
             del base.curMinigame
         Toon.unloadMinigameAnims()
+        base.musicManager.stopAllSounds()
 
     def setParticipants(self, avIds):
         self.avIdList = avIds
@@ -216,6 +218,7 @@ class DistributedMinigame(DistributedObject.DistributedObject):
         for avId in self.avIdList:
             if avId != self.localAvId:
                 self.remoteAvIdList.append(avId)
+        self.setVoteSkips(0)
 
     def setTrolleyZone(self, trolleyZone):
         if not self.hasLocalToon:
@@ -331,9 +334,10 @@ class DistributedMinigame(DistributedObject.DistributedObject):
     def enterFrameworkRules(self):
         self.notify.debug('BASE: enterFrameworkRules')
         self.accept(self.rulesDoneEvent, self.handleRulesDone)
-        self.rulesPanel = MinigameRulesPanel.MinigameRulesPanel('MinigameRulesPanel', self.getTitle(), self.getInstructions(), self.rulesDoneEvent)
+        self.rulesPanel = MinigameRulesPanel.MinigameRulesPanel('MinigameRulesPanel', self.getTitle(), self.getInstructions(), self.rulesDoneEvent, toons = len(self.avIdList))
         self.rulesPanel.load()
         self.rulesPanel.enter()
+        self.setVoteSkips(0)
 
     def exitFrameworkRules(self):
         self.ignore(self.rulesDoneEvent)
@@ -345,6 +349,7 @@ class DistributedMinigame(DistributedObject.DistributedObject):
         self.notify.debug('BASE: handleRulesDone')
         self.sendUpdate('setAvatarReady', [])
         self.frameworkFSM.request('frameworkWaitServerStart')
+        
 
     def enterFrameworkWaitServerStart(self):
         self.notify.debug('BASE: enterFrameworkWaitServerStart')
@@ -443,6 +448,15 @@ class DistributedMinigame(DistributedObject.DistributedObject):
 
     def setMetagameRound(self, metagameRound):
         self.metagameRound = metagameRound
+        
+    def setAvatarReady(self):
+        messenger.send('endVoteSkip')
+        
+    def requestVoteSkip(self):
+        self.sendUpdate('requestSkip')
+        
+    def setVoteSkips(self, votes):
+        messenger.send('minigameSkipVoted', [votes, len(self.avIdList)])
         
 @magicWord(category=CATEGORY_OVERRIDE)
 def abortMinigame():
