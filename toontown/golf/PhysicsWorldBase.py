@@ -3,6 +3,7 @@ from direct.directnotify import DirectNotifyGlobal
 from toontown.toonbase import ToontownGlobals
 from panda3d.core import *
 from panda3d.direct import *
+from panda3d.physics import *
 from math import *
 import math
 from direct.fsm.FSM import FSM
