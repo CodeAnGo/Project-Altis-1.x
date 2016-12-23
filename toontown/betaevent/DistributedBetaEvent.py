@@ -47,10 +47,20 @@ class DistributedBetaEvent(DistributedEvent):
         self.gate.reparentTo(render)
         self.gate.setPos(0, 0, 0)
         self.gateLeft = self.gate.find('**/L_gate')
+        
+        self.headHoncho1 = DistributedSuitBase.DistributedSuitBase(self.cr)
+        headHoncho1suitDNA = SuitDNA.SuitDNA()
+        headHoncho1suitDNA.newSuit('hho')
+        self.headHoncho1.setDNA(headHoncho1suitDNA)
+        self.headHoncho1.setDisplayName('???')
+        self.headHoncho1.setPickable(0)
+        self.headHoncho1.setPosHpr(0, 0, 0, 0, 0, 0)
+        self.headHoncho1.reparentTo(render)
+        self.headHoncho1.hide()
+        #self.headHoncho1.initializeBodyCollisions('toon')
 
     def announceGenerate(self):
         DistributedEvent.announceGenerate(self)
-        self.spark.play()
         
     def start(self):
         pass
@@ -103,6 +113,13 @@ class DistributedBetaEvent(DistributedEvent):
         pass
     
     def exitCogTv(self):
+        pass
+    
+    def enterCogInvade(self, timestamp):
+        self.headHoncho1.show()
+        self.headHoncho1.beginSupaFlyMove(Vec3(12, -4, -68.367), True, "firstCogInvadeFlyIn", walkAfterLanding=False).start()
+        
+    def exitCogInvade(self):
         pass
     
     def enterCogTakeover(self, timestamp):

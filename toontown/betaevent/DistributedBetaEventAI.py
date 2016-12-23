@@ -38,6 +38,12 @@ class DistributedBetaEventAI(DistributedEventAI):
     def exitCogTv(self):
         pass
     
+    def enterCogInvade(self):
+        pass
+        
+    def exitCogInvade(self):
+        pass
+    
     def enterCogTakeover(self):
         pass
     
