@@ -93,16 +93,6 @@ class PickAToon:
         gui2 = asyncloader.loadModel('phase_3/models/gui/quit_button')
         newGui = asyncloader.loadModel('phase_3/models/gui/tt_m_gui_pat_mainGui')
         
-        def spawnBackground(*args):
-            self.background = args[0]
-            self.background.reparentTo(render)
-            self.background.setPosHpr(-50, 0, 8.1, -90, 0, 0)
-        asyncloader.loadModel('phase_3.5/models/modules/gagShop_interior', callback = spawnBackground)
-        for frame in render.findAllMatches('*/doorFrame*'):
-            frame.removeNode()
-        self.sky = loader.loadModel('phase_3.5/models/props/TT_sky')
-        SkyUtil.startCloudSky(self)
-        base.camera.setPosHpr(MAIN_POS, MAIN_HPR)
 
         self.title = OnscreenText(TTLocalizer.AvatarChooserPickAToon, scale=TTLocalizer.ACtitle, parent=hidden, fg=(1, 0.9, 0.1, 1), pos=(0.0, 0.82))
 
@@ -346,13 +336,7 @@ class PickAToon:
         del self.avatarList
         self.toon.removeNode()
         del self.toon
-        if self.background is not None:
-            self.background.hide()
-            self.background.reparentTo(hidden)
-            self.background.removeNode()
-            self.background = None
-        taskMgr.remove('skyTrack')
-        self.sky.reparentTo(hidden)
+        base.cr.DMENU_SCREEN.murder()
         ModelPool.garbageCollect()
         TexturePool.garbageCollect()
         base.setBackgroundColor(ToontownGlobals.DefaultBackgroundColor)

@@ -50,6 +50,7 @@ from toontown.distributed import ToontownDistrictStats
 from toontown.makeatoon import TTPickANamePattern
 from toontown.parties import ToontownTimeManager
 from toontown.toon import Toon, DistributedToon
+from toontown.dmenu import DMenuScreen
 from ToontownMsgTypes import *
 import HoodMgr
 import PlayGame
@@ -128,6 +129,7 @@ class ToontownClientRepository(OTPClientRepository.OTPClientRepository):
         state.addTransition('skipTutorialRequest')
         state = self.gameFSM.getStateNamed('playGame')
         state.addTransition('skipTutorialRequest')
+        self.DMENU_SCREEN = None
 
         self.wantCogdominiums = config.GetBool('want-cogdominiums', 1)
         self.wantEmblems = config.GetBool('want-emblems', 0)
@@ -216,9 +218,16 @@ class ToontownClientRepository(OTPClientRepository.OTPClientRepository):
         base.playMusic(self.music, looping=1, volume=0.9, interrupt=None)
         self.handler = self.handleMessageType
         self.avChoiceDoneEvent = 'avatarChooserDone'
-        self.avChoice = PickAToon.PickAToon(avList, self.loginFSM, self.avChoiceDoneEvent)
-        self.avChoice.load()
-        self.avChoice.enter()
+        
+        self.avChoice = None # Will be set in the main menu
+        
+        self.PAT_AVLIST = avList
+        self.PAT_LOGINFSM = self.loginFSM
+        self.PAT_DONEEVENT = self.avChoiceDoneEvent
+        
+        self.dmenu = DMenuScreen.DMenuScreen
+        self.dmenu()
+        
         self.accept(self.avChoiceDoneEvent, self.__handleAvatarChooserDone, [avList])
         if config.GetBool('want-gib-loader', 1):
             self.loadingBlocker = ToontownLoadingBlocker.ToontownLoadingBlocker(avList)
@@ -277,9 +286,10 @@ class ToontownClientRepository(OTPClientRepository.OTPClientRepository):
 
     def exitChooseAvatar(self):
         self.handler = None
-        self.avChoice.exit()
-        self.avChoice.unload()
-        self.avChoice = None
+        if self.avChoice:
+            self.avChoice.exit()
+            self.avChoice.unload()
+            self.avChoice = None
         self.ignore(self.avChoiceDoneEvent)
 
     def goToPickAName(self, avList, index):
