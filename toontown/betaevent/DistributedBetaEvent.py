@@ -28,24 +28,24 @@ class DistributedBetaEvent(DistributedEvent):
         # The cog version of Looney Labs - After it gets taken over
         self.cogLabs = None
 
-        # Create flippy
-        self.flippy = Toon.Toon()
-        self.flippy.setName('Flippy')
-        self.flippy.setPickable(0)
-        self.flippy.setPlayerType(CCNonPlayer)
+        # Create surlee
+        self.surlee = Toon.Toon()
+        self.surlee.setName('Doctor Surlee')
+        self.surlee.setPickable(0)
+        self.surlee.setPlayerType(CCNonPlayer)
         dna = ToonDNA.ToonDNA()
-        dna.newToonFromProperties('dss', 'ms', 'm', 'm', 17, 0, 17, 17, 3, 3, 3, 3, 7, 2)
-        self.flippy.setDNA(dna)
-        self.flippy.animFSM.request('neutral')
-        self.flippy.reparentTo(render)
-        self.flippy.setPosHpr(68, -10, 0, 75, 0, 0)
-        self.flippy.blinkEyes()
-        self.flippy.head = self.flippy.find('**/__Actor_head')
-        self.flippy.initializeBodyCollisions('toon')
+        dna.newToonFromProperties('pls', 'ls', 'l', 'm', 9, 0, 9, 9, 98, 27, 86, 27, 38, 27)
+        self.surlee.setDNA(dna)
+        self.surlee.animFSM.request('neutral')
+        self.surlee.reparentTo(render)
+        self.surlee.setPosHpr(4, -3, -68.367, 0, 0, 0)
+        self.surlee.blinkEyes()
+        self.surlee.head = self.surlee.find('**/__Actor_head')
+        self.surlee.initializeBodyCollisions('toon')
         
         self.gate = loader.loadModel('phase_14/models/looneylabs/tunnel_gate')
         self.gate.reparentTo(render)
-        self.gate.setPos(0, 0, 0)
+        self.gate.setPos(3, -21, -68)
         self.gateLeft = self.gate.find('**/L_gate')
         
         self.headHoncho1 = DistributedSuitBase.DistributedSuitBase(self.cr)
@@ -58,6 +58,10 @@ class DistributedBetaEvent(DistributedEvent):
         self.headHoncho1.reparentTo(render)
         self.headHoncho1.hide()
         #self.headHoncho1.initializeBodyCollisions('toon')
+        
+        base.musicManager.stopAllSounds()
+        self.toonMusic = loader.loadMusic('phase_14/audio/bgm/ttiHalcyon.mp3') # Placeholder
+        base.playMusic(self.toonMusic, looping = 1)
 
     def announceGenerate(self):
         DistributedEvent.announceGenerate(self)
@@ -67,7 +71,7 @@ class DistributedBetaEvent(DistributedEvent):
 
     def delete(self):
         DistributedEvent.delete(self)
-        self.flippy.delete()
+        self.surlee.delete()
             
     def enterPreEvent(self, timestamp):
         # If for some reason the cog lab is loaded, unload
@@ -99,6 +103,18 @@ class DistributedBetaEvent(DistributedEvent):
             
         self.gateLeft.hprInterval(1, VBase3(0, 0, 0)).start()
         
+        Sequence(
+                    Func(self.surlee.setChatAbsolute, 'Greetings Toons of the world!', CFSpeech|CFTimeout),
+                    Wait(3),
+                    Func(self.surlee.setChatAbsolute, 'Today, we are proud to announce...', CFSpeech|CFTimeout),
+                    Wait(3),
+                    Func(self.surlee.setChatAbsolute, 'The renovation and public opening of...', CFSpeech|CFTimeout),
+                    Wait(4),
+                    Func(self.surlee.setChatAbsolute, 'Looney Labs!', CFSpeech|CFTimeout),
+                    Wait(2),
+                    self.gateLeft.hprInterval(1, VBase3(90, 0, 0))
+                 ).start()
+        
     def exitAnnouncement(self):
         pass
 
@@ -118,6 +134,19 @@ class DistributedBetaEvent(DistributedEvent):
     def enterCogInvade(self, timestamp):
         self.headHoncho1.show()
         self.headHoncho1.beginSupaFlyMove(Vec3(12, -4, -68.367), True, "firstCogInvadeFlyIn", walkAfterLanding=False).start()
+        Sequence(
+                    Wait(6),
+                    Func(self.headHoncho1.loop, 'walk'),
+                    self.headHoncho1.hprInterval(2, VBase3(90, 0, 0)),
+                    Wait(2),
+                    Func(self.headHoncho1.loop, 'neutral'),
+                    Wait(1),
+                    Func(self.headHoncho1.setChatAbsolute, 'Hello Toon...', CFSpeech|CFTimeout),
+                    Wait(4),
+                    Func(self.headHoncho1.setChatAbsolute, "I'd hate to crash the party...", CFSpeech|CFTimeout),
+                    Wait(4),
+                    Func(self.headHoncho1.setChatAbsolute, "Actually... I'd love to!", CFSpeech|CFTimeout)
+                 ).start()
         
     def exitCogInvade(self):
         pass
@@ -150,7 +179,7 @@ class DistributedBetaEvent(DistributedEvent):
         def spawnToonLab(*args):
             self.toonLabs = args[0]
             self.toonLabs.reparentTo(render)
-            self.toonLabs.setPos(0, -140, 0)
+            self.toonLabs.setPos(0, -140, -60.3)
         
         # Asynchronously load the model to not lag the game
         asyncloader.loadModel('phase_14/models/looneylabs/temp_observatory', callback = spawnToonLab) # TODO: Models
